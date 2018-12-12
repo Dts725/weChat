@@ -1,8 +1,5 @@
 /* index.wxss */
-.fill-image {
-  width: 100%;
-  height: 100%;
-}
+
 
 .ready {
   width: 100%;

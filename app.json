@@ -1,12 +1,12 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/problemOnline /problemOnline ",
-    "pages/complaintsMake /complaintsMake",
+    "pages/login",
+    "pages/problemOnline/problemOnline",
+    "pages/complaintsMake/complaintsMake",
     "pages/progress/progressItem/progressItem",
     "pages/progress/progress",
     "pages/bid/promise/promise",
-    "pages/login",
     "pages/logs/logs",
     "pages/storesReserve/storesReserve",
     "pages/pointsRead/pointsRead",

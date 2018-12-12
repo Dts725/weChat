@@ -1,0 +1,60 @@
+<view class='body'>
+  <image class='w100' style='display:block;' mode='widthFix' src='../image/banner.jpg'></image>
+  <view class='white'>
+    <view class='fw700 padt-1rem padb-1rem padr-1rem padl-1rem'>准备&攻略</view>
+
+    <view bindtap='politicalRules' class=' w100 flex-center-warp padb-1rem'>
+      <view class='w25'>
+        <view class='flex-center-column'>
+          <image class='img' src='../image/icon01.png'></image>
+          <view class='fz14'>政策法规</view>
+        </view>
+      </view>
+
+      <view bindtap='storesReserve' class='w25'>
+        <view class='flex-center-column'>
+          <image class='img' src='../image/icon02.png'></image>
+          <view class='fz14'>材料准备</view>
+        </view>
+      </view>
+
+      <view bindtap='pointsRead'  class='w25'>
+        <view class='flex-center-column'>
+          <image class='img' src='../image/icon01.png'></image>
+          <view class='fz14'>要点解读</view>
+        </view>
+      </view>
+
+      <view bindtap='problemCommon' class='w25'>
+        <view class='flex-center-column'>
+          <image class='img' src='../image/icon01.png'></image>
+          <view class='fz14'>常见问题</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+  <view class='white btn mt-1rem'>
+    <view class='fw700 padt-1rem padb-1rem padr-1rem padl-1rem'>办事&追踪</view>
+    <view class=' w100 flex-center-evenly padb-1rem'>
+    
+          <image bindtap='routeBid' src='../image/btn01.png'></image>
+
+          <image bindtap='routeProgress'  src='../image/btn02.png'></image>
+    
+          <image  bindtap='questionOnline' src='../image/btn03.png'></image>
+
+    </view>
+  </view>
+
+
+    <view class='white btn-bottom mt-1rem'>
+    <view class='fw700 padt-1rem padb-1rem padr-1rem padl-1rem'>办事&追踪</view>
+      <view class='w25'>
+        <view class='flex-center-column' bindtap='complaintsMake'>
+          <image class='img' src='../image/icon05.png'></image>
+          <view class='fz14'>我要吐槽</view>
+        </view>
+      </view>
+  </view>
+</view>

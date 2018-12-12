@@ -21,10 +21,25 @@ Page({
   onReady: function() {
 
   },
+  
   //进度查询
   routeProgress() {
     wx.navigateTo({
       url: '../progress/progress',
+    })
+  },
+
+  //在线提问
+  questionOnline () {
+    wx.navigateTo({
+      url: '../problemOnline/problemOnline',
+    })
+  },
+
+  //我要吐槽
+  complaintsMake  () {
+    wx.navigateTo({
+      url: '../complaintsMake/complaintsMake',
     })
   },
 
