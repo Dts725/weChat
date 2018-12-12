@@ -1,0 +1,21 @@
+/* pages/bid/bid.wxss */
+.warp {
+  padding: 1rem 0.5rem;
+
+}
+.tips {
+  padding: 1.5rem 0 0.5rem 0;
+  }
+  .content {
+    height: 6rem;
+    width: 100%;
+    border: 1px dashed #ccc;
+    border-radius: 5px;
+  }
+
+  .btn {
+    margin-top: 2rem;
+    background-color: #f00;
+    width: 70%;
+    border-radius: 20rem;
+  }

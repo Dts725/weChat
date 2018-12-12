@@ -1,0 +1,10 @@
+/* pages/regulationsManagement/regulationsManagement.wxss */
+.tips {
+  margin-left: 2em;
+}
+.block {
+  padding: 1rem 0.5rem;
+}
+.cont {
+  margin-left: 0.5em;
+}

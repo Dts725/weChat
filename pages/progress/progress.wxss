@@ -1,0 +1,15 @@
+/* pages/progress/progress.wxss */
+.item {
+  line-height: 1.5em;
+}
+.img{
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.5em;
+}
+.line {
+  width: 2px;
+  height: 3rem;
+  margin-right: 0.5em;
+  background-color: red;
+}

@@ -1,0 +1,17 @@
+<view class='fz15'>
+  <navigator url='../regulationsManagement/regulationsManagement' class='warp-rules w100 flex-center-between con-top'>
+    <view class=' co-ff'>天津市户外广告设置管理规定</view>
+
+    <image class='img' src='../image/rules/img01.png'></image>
+</navigator>
+  <navigator url='../implementation/implementation' class='Implementation flex-center-between con-top'>
+    <view class='co-ff'>天津市设置户外广告设施行政许可实施办法
+    </view>
+    <image class='img' src='../image/rules/img02.png' mode='widthFix'></image>
+
+  </navigator>
+  <navigator url='../managementHealth/managementHealth' class='health flex-center-between con-top'>
+    <view class='co-ff'>天津市市容和环境卫生管理条例</view>
+    <image class='img' src='../image/rules/img03.png' mode='widthFix'></image>
+  </navigator>
+</view>

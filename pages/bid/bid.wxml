@@ -1,0 +1,124 @@
+<view class='warp'>
+    <view bindtap='application' class='flex-center-start-column'>
+      <text class='tips fz15 fw700'>
+       <text class='co-f0'>*</text> 设置户外广告申请书
+      </text>
+
+        <view class="flex-center-column w100 content body fz14 co-99">
+          <image style='height : 48px; width : 48px;' src='../image/icon_edit.png'></image>
+          <text>我要填报</text>
+        </view>
+    </view>
+
+    <view class='flex-center-start-column'>
+      <text class='tips fz15 fw700'>
+       <text class='co-f0'>*</text> 设置户外广告设施行政许可申请书
+      </text>
+
+        <view class="flex-center-column w100 content body fz14 co-99">
+          <text>拍照上传</text>
+          <image style='height : 24px; width : 24px;' src='../image/icon_add.png'></image>
+        </view>
+    </view>
+
+    <view class='flex-center-start-column'>
+      <text class='tips fz15 fw700'>
+       <text class='co-f0'>*</text> 产权证明
+      </text>
+
+        <view class="flex-center-column w100 content body fz14 co-99">
+          <text>拍照上传</text>
+          <image style='height : 24px; width : 24px;' src='../image/icon_add.png'></image>
+        </view>
+    </view>
+
+    <view class='flex-center-start-column'>
+      <text class='tips fz15 fw700'>
+       <text class='co-f0'>*</text> 申请单位营业执照
+      </text>
+
+        <view class="flex-center-column w100 content body fz14 co-99">
+          <text>拍照上传</text>
+          <image style='height : 24px; width : 24px;' src='../image/icon_add.png'></image>
+        </view>
+    </view>
+
+    <view class='flex-center-start-column'>
+      <text class='tips fz15 fw700'>
+       <text class='co-f0'>*</text> 户外广告设施拟设位置平面图及原貌实景彩色照片
+      </text>
+
+        <view class="flex-center-column w100 content body fz14 co-99">
+          <text>拍照上传</text>
+          <image style='height : 24px; width : 24px;' src='../image/icon_add.png'></image>
+        </view>
+    </view>
+
+    <view class='flex-center-start-column'>
+      <text class='tips fz15 fw700'>
+       <text class='co-f0'>*</text> 计算机绘制的彩色效果图A4纸型昼夜景各1张
+      </text>
+
+        <view class="flex-center-column w100 content body fz14 co-99">
+          <text>拍照上传</text>
+          <image style='height : 24px; width : 24px;' src='../image/icon_add.png'></image>
+        </view>
+    </view>
+
+    <view class='flex-center-start-column'>
+      <text class='tips fz15 fw700'>
+       <text class='co-f0'>*</text> 专业设计部门提供的结构设计图、施工说明书和施工单位的安全实施保证书
+      </text>
+
+        <view class="flex-center-column w100 content body fz14 co-99">
+          <text>拍照上传</text>
+          <image style='height : 24px; width : 24px;' src='../image/icon_add.png'></image>
+        </view>
+    </view>
+
+    <view class='flex-center-start-column'>
+      <text class='tips fz15 fw700'>
+       <text class='co-f0'>*</text> 承诺书
+      </text>
+
+        <view bindtap='promise' class="flex-center-column w100 content body fz14 co-99">
+          <image style='height : 24px; width : 24px;' src='../image/icon_edit.png'></image>
+          <text>我要填报</text>
+        </view>
+    </view>
+
+    <view class='flex-center-start-column'>
+      <text class='tips fz15 fw700'>
+      <text class='co-f0'></text>与经营户外广告业务相关文件
+      </text>
+
+        <view class="flex-center-column w100 content body fz14 co-99">
+          <text>拍照上传</text>
+          <image style='height : 24px; width : 24px;' src='../image/icon_add.png'></image>
+        </view>
+    </view>
+
+    <view class='flex-center-start-column'>
+      <text class='tips fz15 fw700'>
+      <text class='co-f0'></text>相邻人同意设置的书面协议
+      </text>
+
+        <view class="flex-center-column w100 content body fz14 co-99">
+          <text>拍照上传</text>
+          <image style='height : 24px; width : 24px;' src='../image/icon_add.png'></image>
+        </view>
+    </view>
+
+    <view class='flex-center-start-column'>
+      <text class='tips fz15 fw700'>
+      <text class='co-f0'></text>原准予行政许可决定书和原效果图复印件
+      </text>
+
+        <view class="flex-center-column w100 content body fz14 co-99">
+          <text>拍照上传</text>
+          <image style='height : 24px; width : 24px;' src='../image/icon_add.png'></image>
+        </view>
+    </view>
+
+<button class='btn co-ff fz14'>提交申请</button>
+</view>

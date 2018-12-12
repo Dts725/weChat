@@ -1,0 +1,50 @@
+<view class='fz14 body h-100vh flex-center-start-column-center warp'>
+
+  <view bindtap='routeProgressInfo' class='flex-center-between item white'>
+    <view class='flex-center-start-column'>
+      <text class='text'>广告及夜景灯光s设施设置与变动许可 </text>
+      <text class='co-ce text'>2018-10-06</text>
+    </view>
+    <view class='co-ce text'>></view>
+  </view>
+
+  <view class='flex-center-between item white'>
+    <view class='flex-center-start-column'>
+      <text class='text'>广告及夜景灯光s设施设置与变动许可 </text>
+      <text class='co-ce text'>2018-10-06</text>
+    </view>
+    <view class='co-ce text'>></view>
+  </view>
+
+  <view class='flex-center-between item white'>
+    <view class='flex-center-start-column'>
+      <text class='text'>广告及夜景灯光s设施设置与变动许可 </text>
+      <text class='co-ce text'>2018-10-06</text>
+    </view>
+    <view class='co-ce text'>></view>
+  </view>
+
+  <view class='flex-center-between item white'>
+    <view class='flex-center-start-column'>
+      <text class='text'>广告及夜景灯光s设施设置与变动许可 </text>
+      <text class='co-ce text'>2018-10-06</text>
+    </view>
+    <view class='co-ce text'>></view>
+  </view>
+
+  <view class='flex-center-between item white'>
+    <view class='flex-center-start-column'>
+      <text class='text'>广告及夜景灯光s设施设置与变动许可 </text>
+      <text class='co-ce text'>2018-10-06</text>
+    </view>
+    <view class='co-ce text'>></view>
+  </view>
+
+  <view class='flex-center-between item white'>
+    <view class='flex-center-start-column'>
+      <text class='text'>广告及夜景灯光s设施设置与变动许可 </text>
+      <text class='co-ce text'>2018-10-06</text>
+    </view>
+    <view class='co-ce text'>></view>
+  </view>
+</view>

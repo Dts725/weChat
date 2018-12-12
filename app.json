@@ -1,0 +1,32 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/problemOnline /problemOnline ",
+    "pages/complaintsMake /complaintsMake",
+    "pages/progress/progressItem/progressItem",
+    "pages/progress/progress",
+    "pages/bid/promise/promise",
+    "pages/login",
+    "pages/logs/logs",
+    "pages/storesReserve/storesReserve",
+    "pages/pointsRead/pointsRead",
+    "pages/politicalRules/politicalRules",
+    "pages/problemCommon/problemCommon",
+    "pages/regulationsManagement/regulationsManagement",
+    "pages/implementation/implementation",
+    "pages/managementHealth/managementHealth",
+    "pages/bid/bid",
+    "pages/bid/edit/edit",
+    "pages/register/register",
+    "pages/dailg/dailg",
+    "pages/bid/firstStemp/firstStemp",
+    "pages/bid/signature/signature",
+    "pages/progress/progressItem"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "户外广告设置许可",
+    "navigationBarTextStyle": "black"
+  }
+}
