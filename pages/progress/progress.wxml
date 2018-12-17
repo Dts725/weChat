@@ -1,65 +1,66 @@
 <view>
-  <view>
+  <view class='pr'>
     <image src='../image/progress/banner.png' class='w100' mode="widthFix"></image>
-  </view>
+      <image class='progress pf' src='../image/progress/pro_20.png'></image>
+    </view>
 
-  <view class='flex-start'>
-    <view class='flex-center-column'>
-      <image class='img' src='../image/progress/icon01.png'></image>
-      <view class='line'></view>
+    <view class='flex-start'>
+      <view class='flex-center-column'>
+        <image class='img' src='../image/progress/icon01.png'></image>
+        <view class='line'></view>
+      </view>
+      <view class='flex-center-start-column'>
+        <text class='fw700 item'>网上预审</text>
+        <text class='co-e2 fz14 item'>2018-10-15 20:00</text>
+        <text class='co-ce fz14 item'>您的申请已预审通过</text>
+      </view>
     </view>
-    <view class='flex-center-start-column'>
-      <text class='fw700 item'>网上预审</text>
-      <text class='co-e2 fz14 item'>2018-10-15 20:00</text>
-      <text class='co-ce fz14 item'>您的申请已预审通过</text>
-    </view>
-  </view>
 
-  <view class='flex-start'>
-    <view class='flex-center-column'>
-      <image class='img' src='../image/progress/icon01.png'></image>
-      <view class='line'></view>
+    <view class='flex-start'>
+      <view class='flex-center-column'>
+        <image class='img' src='../image/progress/icon01.png'></image>
+        <view class='line'></view>
+      </view>
+      <view class='flex-center-start-column'>
+        <text class='fw700 item'>受理</text>
+        <text class='co-e2 fz14 item'>2018-10-15 20:00</text>
+        <text class='co-ce fz14 item'>您的材料已受理完成</text>
+      </view>
     </view>
-    <view class='flex-center-start-column'>
-      <text class='fw700 item'>受理</text>
-      <text class='co-e2 fz14 item'>2018-10-15 20:00</text>
-      <text class='co-ce fz14 item'>您的材料已受理完成</text>
-    </view>
-  </view>
 
-  <view class='flex-start'>
-    <view class='flex-center-column'>
-      <image class='img' src='../image/progress/icon01.png'></image>
-      <view class='line'></view>
+    <view class='flex-start'>
+      <view class='flex-center-column'>
+        <image class='img' src='../image/progress/icon01.png'></image>
+        <view class='line'></view>
+      </view>
+      <view class='flex-center-start-column'>
+        <text class='fw700 item'>初审</text>
+        <text class='co-e2 fz14 item'>2018-10-15 20:00</text>
+        <text class='co-ce fz14 item'>您的申请已初审通过</text>
+      </view>
     </view>
-    <view class='flex-center-start-column'>
-      <text class='fw700 item'>初审</text>
-      <text class='co-e2 fz14 item'>2018-10-15 20:00</text>
-      <text class='co-ce fz14 item'>您的申请已初审通过</text>
-    </view>
-  </view>
 
-  <view class='flex-start'>
-    <view class='flex-center-column'>
-      <image class='img' src='../image/progress/icon01.png'></image>
-      <view class='line'></view>
+    <view class='flex-start'>
+      <view class='flex-center-column'>
+        <image class='img' src='../image/progress/icon01.png'></image>
+        <view class='line'></view>
+      </view>
+      <view class='flex-center-start-column'>
+        <text class='fw700 item'>批准</text>
+        <text class='co-e2 fz14 item'>2018-10-15 20:00</text>
+        <text class='co-ce fz14 item'>您的申请已批准通过</text>
+      </view>
     </view>
-    <view class='flex-center-start-column'>
-      <text class='fw700 item'>批准</text>
-      <text class='co-e2 fz14 item'>2018-10-15 20:00</text>
-      <text class='co-ce fz14 item'>您的申请已批准通过</text>
-    </view>
-  </view>
 
-  <view class='flex-start'>
-    <view class='flex-center-start'>
-      <image class='img' src='../image/progress/icon01.png'></image>
+    <view class='flex-start'>
+      <view class='flex-center-start'>
+        <image class='img' src='../image/progress/icon01.png'></image>
+      </view>
+      <view class='flex-center-start-column'>
+        <text class='fw700 item'>办结</text>
+        <text class='co-e2 fz14 item'>2018-10-15 20:00</text>
+        <text class='co-ce fz14 item'>您的申请已办结</text>
+      </view>
     </view>
-    <view class='flex-center-start-column'>
-      <text class='fw700 item'>办结</text>
-      <text class='co-e2 fz14 item'>2018-10-15 20:00</text>
-      <text class='co-ce fz14 item'>您的申请已办结</text>
-    </view>
-  </view>
 
-</view>
+  </view>
