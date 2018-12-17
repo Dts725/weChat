@@ -1,11 +1,11 @@
 {
   "pages": [
-    "pages/index/index",
     "pages/login",
+    "pages/progress/progress",
+    "pages/index/index",
     "pages/problemOnline/problemOnline",
     "pages/complaintsMake/complaintsMake",
     "pages/progress/progressItem/progressItem",
-    "pages/progress/progress",
     "pages/bid/promise/promise",
     "pages/logs/logs",
     "pages/storesReserve/storesReserve",
@@ -20,8 +20,7 @@
     "pages/register/register",
     "pages/dailg/dailg",
     "pages/bid/firstStemp/firstStemp",
-    "pages/bid/signature/signature",
-    "pages/progress/progressItem"
+    "pages/bid/signature/signature"
   ],
   "window": {
     "backgroundTextStyle": "light",
