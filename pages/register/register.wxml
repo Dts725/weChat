@@ -2,7 +2,8 @@
 <view>
   <image class='w100' src='../image/banner_register.jpg' mode='widthFix'></image>
   <view class='flex-center-column fz14'>
-    <input placeholder-class="co-f2" bindblur='getName' placeholder='请输入姓名'></input>
+    <input placeholder-class="co-f2" bindblur='getName' placeholder='请输入登录名'></input>
+    <input placeholder-class="co-f2" bindblur='getXmName' placeholder='请输入用户姓名或单位名称'></input>
     <input placeholder-class="co-f2" bindblur='getIdCard' placeholder='请输入身份证'></input>
     <input placeholder-class="co-f2" bindblur='getPhone' placeholder='请输入手机号'></input>
     <input placeholder-class="co-f2" bindblur='getPwd' placeholder='请输入密码'></input>

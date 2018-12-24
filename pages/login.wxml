@@ -2,9 +2,9 @@
 <view>
   <image class='w100' src='./image/banner_login.jpg' mode='widthFix'></image>
   <view class='flex-center-column fz14'>
-    <input placeholder-class="co-f2" placeholder='请输入账号'></input>
-    <input placeholder-class="co-f2" placeholder='请输入密码'></input>
-    <button class='btn co-ff'>登录</button>
+    <input placeholder-class="co-f2" bindblur='getMobile' placeholder='请输入手机号'></input>
+    <input placeholder-class="co-f2" bindblur='getPwd' placeholder='请输入密码'></input>
+    <button bindtap='loginSubmit' class='btn co-ff'>登录</button>
     <view bindtap='register'>
       <text class='co-ce'>还没有账户?</text>
       <text class='co-f0'>立即注册</text>

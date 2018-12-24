@@ -30,6 +30,23 @@ radio {
   z-index: 999;
 
 }
+.czjg{
+  height: 2rem;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 66;
+}
+
+
+.close{
+  top: 5px;
+  right: 50px;
+  z-index: 9;
+  width: 16px;
+  height: 16px;
+}
 .picker-warp {
   width: 100%;
   top: 50%;

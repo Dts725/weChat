@@ -1,15 +1,85 @@
 // login.js
+import url from '../fetch.js'
+const app = getApp()
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+
+    data : {
+      mobile : "",
+      pwd : ""
+    }
   },
   register() {
     wx.navigateTo({
       url: './register/register',
+    })
+  },
+  //获取授权
+  warrant() {
+    wx.request({
+      url: url.warrant,
+      data: {
+        client_id: 'yhxcx',//oa/
+        client_secret: '880055513D7EF8FAF30E7DA7B03B9582' //小程序唯一访问密钥
+      },
+      success: res => {
+        console.log('88888888888888888888888888888')
+        console.log(res.data.res_data.token)
+        wx.setStorage({
+          key: "token",
+          data: res.data.res_data.token
+        })
+      }
+    })
+  },
+
+
+//获取用户名
+  getMobile(e){
+   
+    this.data.data.mobile = e.detail.value;
+  },
+  getPwd(e){
+    this.data.data.pwd = e.detail.value;
+  },
+
+  //登录连接
+  loginSubmit(){
+    console.log(this.data)
+    console.log(app.globalData.loginInfo)
+
+    wx.request({
+      url: url.loginUrl,
+      data : this.data.data,
+      success : res => {
+        if (res.data.res_data.isok==1){
+          this.warrant();
+          app.globalData.loginInfo = res.data.res_data;
+          wx.setStorage({
+            key: "userid",
+            data: res.data.res_data
+          })
+         wx.showToast({
+           title: '登录成功',
+           icon: 'success',
+           duration: 2000
+         })
+      wx.navigateTo({
+           url: './index/index',
+         })
+       } else {
+         wx.showToast({
+           title: '登录失败',
+           icon: 'none',
+           duration: 2000
+         })
+       }
+      }
     })
   },
   /**

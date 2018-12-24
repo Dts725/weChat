@@ -1,6 +1,7 @@
 //app.js
+import url from './fetch.js'
 
-const url = 'http://202.99.99.135 /v1?client_id=yhxcx&client_secret=880055513D7EF8FAF30E7DA7B03B9582';
+
 App({
   onLaunch: function () {
     // 展示本地存储能力
@@ -30,9 +31,11 @@ App({
             success: res => {
               console.log('4444444444444')
 
+
               this.warrant()
               // 可以将 res 发送给后台解码出 unionId
               this.globalData.userInfo = res.userInfo
+       
               console.log(res.userInfo)
               // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
               // 所以此处加入 callback 以防止这种情况
@@ -42,6 +45,7 @@ App({
             }
           })
         } else {
+          this.warrant();
           wx.redirectTo({
             url: './dailg/dailg',
           })
@@ -55,26 +59,26 @@ App({
 
   warrant () {
       wx.request({
-        url: 'http://202.99.99.135/v1/api?method=tjkfqExchange.tjoa.auth&client_id=yhxcx&client_secret=880055513D7EF8FAF30E7DA7B03B9582',
+        url: url.warrant,
+        data : {
+          client_id : 'yhxcx',//oa/
+          client_secret: '880055513D7EF8FAF30E7DA7B03B9582' //小程序唯一访问密钥
+        },
         success : res => {
-          console.log(res)
+          this.globalData.token = res.data.res_data.token;
+          wx.setStorageSync(
+             "token",
+            res.data.res_data.token
+          )
         }
       })
   },
+  
 
   globalData: {
     userInfo: null,
-
-    registerUrl: url+'/api',//注册接口
-    loginUrl: url+'/api',//登录接口i
-    submitApplicantBaseInfo: url+'/api',//事项申办提交进本信息
-    getMaterials: url + '/api',//事项申办申请材料信息
-    submitApplicantBaseInfo: url+'/api',//电子表单提交信息
-    fileuploadSqcl: url+'/api',//申请材料上传
-    delFile: url+'/api',//删除附件
-    submitMaterials: url+'/api',//材料列表提交
-    getBjProcessing: url+'/api',//办件查询
-    subPjTs: url+'/api',//评价接收端口
-    onlineQuestion: url+'/api',//在线提问接口
+    loginInfo: null,
+    token : "",
+    getMaterials : ""
   }
 })
