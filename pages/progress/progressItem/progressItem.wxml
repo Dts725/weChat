@@ -1,50 +1,11 @@
 <view class='fz14 body h-100vh flex-center-start-column-center warp'>
 
-  <view bindtap='routeProgressInfo' class='flex-center-between item white'>
+  <view  wx:for="{{dataInfo}}" wx:for-index="idx" wx:for-item='item' wx:key='idx' data-parmas='{{item}}' bindtap='routeProgressInfo' class='flex-center-between item white'>
     <view class='flex-center-start-column'>
-      <text class='text'>广告及夜景灯光s设施设置与变动许可 </text>
-      <text class='co-ce text'>2018-10-06</text>
+      <text class='text'>{{item.ywsx_sxmc}} </text>
+      <text class='co-ce text'>{{item.bj_ctime}}</text>
     </view>
-    <view class='co-ce text'>></view>
+    <view class='co-ce text'><image style='height:16px;width:16px;' src='../../image/right_row.png'></image></view>
   </view>
 
-  <view class='flex-center-between item white'>
-    <view class='flex-center-start-column'>
-      <text class='text'>广告及夜景灯光s设施设置与变动许可 </text>
-      <text class='co-ce text'>2018-10-06</text>
-    </view>
-    <view class='co-ce text'>></view>
-  </view>
-
-  <view class='flex-center-between item white'>
-    <view class='flex-center-start-column'>
-      <text class='text'>广告及夜景灯光s设施设置与变动许可 </text>
-      <text class='co-ce text'>2018-10-06</text>
-    </view>
-    <view class='co-ce text'>></view>
-  </view>
-
-  <view class='flex-center-between item white'>
-    <view class='flex-center-start-column'>
-      <text class='text'>广告及夜景灯光s设施设置与变动许可 </text>
-      <text class='co-ce text'>2018-10-06</text>
-    </view>
-    <view class='co-ce text'>></view>
-  </view>
-
-  <view class='flex-center-between item white'>
-    <view class='flex-center-start-column'>
-      <text class='text'>广告及夜景灯光s设施设置与变动许可 </text>
-      <text class='co-ce text'>2018-10-06</text>
-    </view>
-    <view class='co-ce text'>></view>
-  </view>
-
-  <view class='flex-center-between item white'>
-    <view class='flex-center-start-column'>
-      <text class='text'>广告及夜景灯光s设施设置与变动许可 </text>
-      <text class='co-ce text'>2018-10-06</text>
-    </view>
-    <view class='co-ce text'>></view>
-  </view>
 </view>

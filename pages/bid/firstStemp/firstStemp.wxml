@@ -23,7 +23,7 @@
     <view class="flex-center-start ipt">
       <text class='co-f0'>*</text>
       <text class='item'>法人代表</text>
-      <input cursor-spacing='40' bindblur='fr_frdb' style='margin-left:3em;' placeholder-style="color:#dedede" type='number' placeholder='与营业执照名称一致'></input>
+      <input cursor-spacing='40' bindblur='fr_frdb' style='margin-left:3em;' placeholder-style="color:#dedede" type='text' placeholder='与营业执照名称一致'></input>
     </view>
 
     <view class="flex-center-start ipt pr">

@@ -33,7 +33,7 @@ Page({
       sxid: "", //事项id
       bjid: "", //办件id
       clid: "", //材料id
-      eformcode: "", //eformcode
+      eformcode: "hwgg", //eformcode
       baseidforupload: "", //表单唯一提交不可为空，设置32为uuid
       "base.base_ctime": "", //表单创建时间
       szdd: "", //设置地点
@@ -136,7 +136,8 @@ Page({
     propertyValue: "", //产权类型
     flag: true, //租赁状态
     bindDateChangeValue: "", //开始时间
-    bindDateChangeEndValue: "" //结束时间
+    bindDateChangeEndValue: "", //结束时间
+    imgUrl: "" //上传图片路径
   },
 
   bindPickerChange(e) {
@@ -172,7 +173,13 @@ Page({
         "content-type": "application/x-www-form-urlencoded"
       },
       method: "post",
-      success: res => {}
+      success: res => {
+        if(res.data.res_data.state == 1) {
+          wx.navigateTo({
+            url: '../bid',
+          })
+        }
+      }
     });
   },
 
@@ -192,8 +199,18 @@ Page({
     })
   },
 
+  //截取图片地址
+
+  getImgUrl(str,fid,name){
+    let index = str.indexOf('webapps');
+    console.log(str.substr(index+7))
+
+    return url.imgUrl + str.substr(index + 7) +'/'+ fid+name
+  },
+
   //上转材料
   uploadFile () {
+    let that = this;
     let data = `&userid=${wx.getStorageSync('userid').userid}&object_id=${wx.getStorageSync('uploadInfo')[0].id}`
     wx.chooseImage({
       success(res) {
@@ -202,10 +219,14 @@ Page({
           url: url.fileuploadSqcl+data, // 仅为示例，非真实的接口地址
           filePath: tempFilePaths[0],
           name: 'file',
- 
           success(res) {
-            console.log(res);
-            this.data.fid = res.data
+            let obj = JSON.parse(res.data);
+            that.data.fid =obj.fid
+            that.setData({
+              imgUrl: that.getImgUrl(obj.savePath,obj.fid, obj.endName)
+            })
+    
+            app.globalData.fid[0]=that.data.fid
             // do something
           }
         })

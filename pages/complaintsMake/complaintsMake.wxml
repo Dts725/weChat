@@ -7,12 +7,12 @@
 
   <view class='flex-center-start-column topic'>
   <text class='fz15 fw700 lin'>投诉主题</text>
-  <input  class="w100 border-rad" placeholder-style='text-indent:1em;' placeholder-class='co-de' placeholder='请输入投诉主题'></input>
+  <input bindblur='topicFn'  class="w100 border-rad" placeholder-style='text-indent:1em;' placeholder-class='co-de' placeholder='请输入投诉主题'></input>
   </view>
 
   <view class='flex-center-start-column topic'>
-  <text class='fz15 fw700 lin'>投诉或建议内容</text>
-  <textarea maxlength='500'  class="w100 border-rad" placeholder-style='text-indent:1em;' placeholder-class='co-de' placeholder='请输入投诉主题'></textarea>
+  <text  class='fz15 fw700 lin'>投诉或建议内容</text>
+  <textarea maxlength='500' bindblur="concentFn"  class="w100 border-rad" placeholder-style='text-indent:1em;' placeholder-class='co-de' placeholder='请输入投诉主题'></textarea>
   </view>
 
 
@@ -21,15 +21,16 @@
           <text>添加附件</text>
           <text class='co-f0'>我要上传</text>
         </view>
-        <view  class='flex-center-column file-upload'>
-          <text class='co-99'>上传图片</text>
-          <image style='width:2em;height:2em;' src='../image/icon_add.png'></image>
+        <view bindtap='uploadFn' class='flex-center-column file-upload'>
+          <text wx-if="{{!imgUrl}}" class='co-99'>上传图片</text>
+          <image wx-if="{{!imgUrl}}" style='width:2em;height:2em;' src='../image/icon_add.png'></image>
+          <image wx-if="{{imgUrl}}" mode='aspectFit' src='{{imgUrl}}'></image>
         </view>
   </view>
 
   
    <view class='flex-center-warp bottom fz14 white'>
       <view class='back co-99' bindtap='back'>返回</view>
-      <view class='next co-ff' bindtap='next'>保存</view>
+      <view class='next co-ff' bindtap='submint'>保存</view>
     </view>
 </view>

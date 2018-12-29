@@ -1,5 +1,8 @@
 <view class='fz14 warp'>
-  <view class='t-center tips'>行政审批服务人员竭诚为您服务</view>
+
+<!-- <web-view src="https://xzfwzx.teda.gov.cn/v1/api?method=tjkfqwssp.im.index"></web-view> -->
+<image bindtap='cansle' src='../image/qrcode.png'></image>
+  <!-- <view class='t-center tips'>行政审批服务人员竭诚为您服务</view>
   <scroll-view>
       <view class='t-center co-de'>系统登录成功</view>
       
@@ -23,5 +26,5 @@
   <view class='bottom flex-center-between'>
     <input cursor-spacing='10' maxlength='-1' class='inputs w75 body' placeholder-class='place' placeholder='请输入...'></input>
     <view class='submit co-ff bg-e1'>发送</view>
-  </view>
+  </view> -->
 </view>

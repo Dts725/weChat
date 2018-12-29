@@ -50,9 +50,6 @@ Page({
 
   //登录连接
   loginSubmit(){
-    console.log(this.data)
-    console.log(app.globalData.loginInfo)
-
     wx.request({
       url: url.loginUrl,
       data : this.data.data,

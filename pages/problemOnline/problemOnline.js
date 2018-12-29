@@ -8,6 +8,16 @@ Page({
 
   },
 
+  cansle() {
+    wx.previewImage({
+      urls: ['http://file.shyunhua.com/partyfile/5c25a873c00bf__!1545967023.png'],
+      current: 'http://file.shyunhua.com/partyfile/5c25a873c00bf__!1545967023.png',
+      success : res => {
+          console.log(res)
+      }
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */

@@ -153,12 +153,12 @@
         <view class='flex-center-between w100'>
           <text>位置示意图</text>
           <!-- <text class='co-f0'>我要上传</text> -->
-          <text class='co-f0' bindtap='delete'>点击删除</text>
+          <text class='co-f0' bindtap='delete'>我要上传</text>
         </view>
         <view  class='flex-center-column file-upload pr'>
-          <!-- <text>上传地图截图或手绘地图示意</text>
-          <image style='width:2em;height:2em;' src='../../image/icon_add.png'></image> -->
-           <image src='../../image/btn02.png'></image>
+          <text wx-if="{{!imgUrl}}">上传地图截图或手绘地图示意</text>
+          <image wx-if="{{!imgUrl}}" style='width:2em;height:2em;' src='../../image/icon_add.png'></image>
+           <image wx-if="{{imgUrl}}" mode='aspectFit' src='{{imgUrl}}'></image>
            
         </view>
        

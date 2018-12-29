@@ -1,22 +1,17 @@
 {
   "pages": [
-    "pages/bid/firstStemp/firstStemp",
-    
-    "pages/bid/bid",
-    
-    
-    "pages/bid/edit/edit",
-    
-    "pages/login",
     
     "pages/index/index",
-  
-    "pages/register/register",
+    "pages/bid/firstStemp/firstStemp",
+    "pages/bid/bid",
+    "pages/bid/edit/edit",
+    "pages/login",
+    "pages/bid/promise/promise",
     "pages/progress/progress",
+    "pages/register/register",
     "pages/problemOnline/problemOnline",
     "pages/complaintsMake/complaintsMake",
     "pages/progress/progressItem/progressItem",
-    "pages/bid/promise/promise",
     "pages/logs/logs",
     "pages/storesReserve/storesReserve",
     "pages/pointsRead/pointsRead",
@@ -25,7 +20,6 @@
     "pages/regulationsManagement/regulationsManagement",
     "pages/implementation/implementation",
     "pages/managementHealth/managementHealth",
-  
     "pages/dailg/dailg",
     "pages/bid/signature/signature"
   ],

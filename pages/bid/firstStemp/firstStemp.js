@@ -101,6 +101,14 @@ Page({
           wx.navigateTo({
             url: `../../bid/bid`,
           })
+        } else {
+          wx.showToast({
+            title: '您未登录或登录失效请重新登录!!',
+            icon: 'none',
+          })
+          wx.navigateTo({
+            url: '../../login',
+          })
         }
       }
     })
