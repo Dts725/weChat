@@ -74,7 +74,9 @@
 <view wx:for='{{dataInfo.list}}' wx:key='index'>
     <view class='mt-1rem white flex-center-between-column'>
     <view class='flex-center-start fw700 bord_ce w90 padl-1rem padr-1rem padt-1rem padb-1rem'>
-      <text class='lis-1 co-ff fz14 mr-1rem'>1</text> {{item.cl_clmc}}</view>
+      <text class='lis-1 co-ff fz14 mr-1rem'>1</text>
+      <text>{{item.cl_clmc}}</text>
+      </view>
     <view class='flex-center-between w90 padl-1rem padr-1rem padt-1rem padb-1rem'>
       <view class='flex-center-start'>
         <image class='img mr-1rem' src='../../image/time_icon.png'></image>

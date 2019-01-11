@@ -10,14 +10,22 @@
  
 }
  
-
+.lis-1 {
+  line-height: 1rem;
+  background-color: #e15244;
+  width: 1rem;
+  height: 1rem;
+  padding: 1px;
+  
+   flex-shrink: 0;
+  border-radius: 2rem;
+  text-align: center;
+  
+}
  
 .img {
- 
-  width: 1.5rem;
- 
-  height: 1.5rem;
- 
+  width: 1rem;
+  height: 1rem;
   margin-right: 0.5rem;
  
 }
@@ -32,7 +40,7 @@
  
   margin-right: 0.5rem;
  
-  background-color: red;
+  background-color: #e15244;
  
 }
  
