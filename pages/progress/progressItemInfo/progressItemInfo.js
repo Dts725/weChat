@@ -6,33 +6,49 @@ Page({
    * 页面的初始数据
    */
   data: {
-    dataInfo : ""
+ 
+    bjTopData : {}
   },
-  routeProgressInfo (e) {
-    console.log(e)
-    wx.navigateTo({
-      // url: `../progress?detail=${JSON.stringify(e.currentTarget.dataset.parmas)}`,
-      url: `../progressItemInfo/progressItemInfo?detail=${JSON.stringify(e.currentTarget.dataset.parmas)}`,
+  routeProgressInfo(e) {
+    
+    // wx.navigateTo({
+    //   url: `../progress?detail=${JSON.stringify(e.currentTarget.dataset.parmas)}`,
+    // })
+  },
+
+  //办件事项
+  bjTop (e) {
+ 
+    this.setData({
+      bjTopData : e
     })
+
   },
+  
+
   //获取页面数据
-  getData() {
+  getData(e) {
+    let _this =this;
     let data = {
       token: wx.getStorageSync('token'),
-      userid: wx.getStorageSync('userid').userid
+      bjid: e.bj_id
     }
     wx.request({
-      method: 'post',
-      url: url.getBjProcessing,
+      url: url.viewBJBZInfoAndMaterials,
       data: data,
-      header: {
-        "content-type": "application/x-www-form-urlencoded"
-      },
+      // header: {
+      //   "content-type": "application/x-www-form-urlencoded"
+      // },
       success: res => {
-        if(res.data.res_data.state === 1) {
-          this.setData({
-            dataInfo: res.data.res_data.list
+   
+        if (res.data.res_data.state === 1) {
+          _this.setData({
+            dataInfo: res.data.res_data,
+
+            bjTopData: res.data.res_data.bjinfo
           })
+
+          console.log(_this.data.dataInfo)
         } else {
           wx.showToast({
             title: '您未登录或登录失效请重新登录',
@@ -42,7 +58,7 @@ Page({
             url: '../../login',
           })
         }
- 
+
       }
     })
   },
@@ -52,14 +68,18 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getData();
+
+    // this.bjTop(JSON.parse(options.detail))
+    this.getData(JSON.parse(options.detail));
+
+  
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    // this.getData();
   },
 
   /**

@@ -70,6 +70,7 @@ App({
           "token",
           res.data.res_data.token
         )
+        url.getToken();
       }
     })
   },

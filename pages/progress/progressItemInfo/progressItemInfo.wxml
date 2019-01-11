@@ -1,0 +1,92 @@
+<view class='fz14 body h100 bord_top_e2 mt-1rem'>
+
+  <block>
+  <top  bjTopData='{{bjTopData}}'></top>
+  </block>
+
+  <block>
+  <info bjInfoData='{{dataInfo}}'></info>
+  </block>
+
+  <!-- 信息展示
+  <view class='w100 white mt-1rem'>
+    <view class='flex-center w100 fz15 fw700'>
+      <text class='w50 t-center padt-1rem padb-1rem padr-1rem padl-1rem info-top'>办件信息</text>
+      <text class='w50 t-center padt-1rem padb-1rem padr-1rem padl-1rem process-bottom'>进度查询</text>
+    </view>
+    <view class='fz14 flex-center'>
+      <view class='flex-center-between bord_ce w90 padl-1rem padr-1rem'>
+        <text class='padt-1rem padb-1rem'>申请单位</text>
+        <text class='padt-1rem padb-1rem co-ce'>云话科技</text>
+      </view>
+    </view>
+
+    <view class='fz14 flex-center'>
+      <view class='flex-center-between bord_ce  w90 padl-1rem padr-1rem'>
+        <text class='padt-1rem padb-1rem'>申请单位</text>
+        <text class='padt-1rem padb-1rem co-ce'>云话科技</text>
+      </view>
+    </view>
+
+    <view class='fz14 flex-center'>
+      <view class='flex-center-between bord_ce  w90 padl-1rem padr-1rem'>
+        <text class='padt-1rem padb-1rem'>申请单位</text>
+        <text class='padt-1rem padb-1rem co-ce'>云话科技</text>
+      </view>
+    </view>
+
+    <view class='fz14 flex-center'>
+      <view class='flex-center-between bord_ce  w90 padl-1rem padr-1rem'>
+        <text class='padt-1rem padb-1rem'>申请单位</text>
+        <text class='padt-1rem padb-1rem co-ce'>云话科技</text>
+      </view>
+    </view>
+
+    <view class='fz14 flex-center'>
+      <view class='flex-center-between bord_ce  w90 padl-1rem padr-1rem'>
+        <text class='padt-1rem padb-1rem'>申请单位</text>
+        <text class='padt-1rem padb-1rem co-ce'>云话科技</text>
+      </view>
+    </view>
+
+    <view class='fz14 flex-center'>
+      <view class='flex-center-between bord_ce  w90 padl-1rem padr-1rem'>
+        <text class='padt-1rem padb-1rem'>申请单位</text>
+        <text class='padt-1rem padb-1rem co-ce'>云话科技</text>
+      </view>
+    </view>
+  </view> -->
+
+
+  <!-- <view class='mt-1rem white flex-center-between-column'>
+    <view class='flex-center-start fw700 bord_ce w90 padl-1rem padr-1rem padt-1rem padb-1rem'>
+      <text class='lis-1 co-ff fz14 mr-1rem'>1</text> 设置户外广告实施行政许可申请书</view>
+    <view class='flex-center-between w90 padl-1rem padr-1rem padt-1rem padb-1rem'>
+      <view class='flex-center-start'>
+        <image class='img mr-1rem' src='../../image/time_icon.png'></image>
+        <text class='co-ce'>提交时间:</text> 2019-01-01</view>
+      <view class='flex-center-start'>
+        <image class='img mr-1rem' src='../../image/bind_item.png'></image>
+        <text class='co-ce'>操作:</text> 查看</view>
+    </view>
+  </view> -->
+
+<view wx:for='{{dataInfo.list}}' wx:key='index'>
+    <view class='mt-1rem white flex-center-between-column'>
+    <view class='flex-center-start fw700 bord_ce w90 padl-1rem padr-1rem padt-1rem padb-1rem'>
+      <text class='lis-1 co-ff fz14 mr-1rem'>1</text> {{item.cl_clmc}}</view>
+    <view class='flex-center-between w90 padl-1rem padr-1rem padt-1rem padb-1rem'>
+      <view class='flex-center-start'>
+        <image class='img mr-1rem' src='../../image/time_icon.png'></image>
+        <text class='co-ce'>提交时间:</text>{{item.cl_time}}</view>
+      <view class='flex-center-start'>
+        <image class='img mr-1rem' src='../../image/bind_item.png'></image>
+        <text class='co-ce'>操作:</text> {{item.cl_time === 6? '查看' : '编辑'}}</view>
+    </view>
+  </view>
+</view>
+ 
+
+
+
+</view>

@@ -156,8 +156,8 @@ Page({
 
 
   //提交
-  submit() {
-    
+  submitEdit() {
+    console.log('你不该被触发')
     this.data.data.bjid = app.globalData.getMaterials.bjid;
     this.data.data.sxid = app.globalData.getMaterials.sxid;
     this.data.data.clid = wx.getStorageSync('uploadInfo')[0].id;
@@ -165,7 +165,7 @@ Page({
     this.data.data.token = wx.getStorageSync('token')
     this.data.data.userid = wx.getStorageSync('userid').userid
     this.data.data.accid = wx.getStorageSync('userid').userid
-    console.log(this.data.data)
+    // if (url.rules(this.data.data)) return
     wx.request({
       url: url.submitEform2, //事项申办提交进本信息,
       data: this.data.data,
@@ -175,6 +175,7 @@ Page({
       method: "post",
       success: res => {
         if(res.data.res_data.state == 1) {
+          wx.setStorageSync('edit', this.data.data)
           wx.navigateTo({
             url: '../bid',
           })
@@ -365,7 +366,9 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {},
+  onLoad: function(options) {
+   
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

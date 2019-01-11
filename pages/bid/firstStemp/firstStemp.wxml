@@ -5,31 +5,31 @@
     <view class="flex-center-start ipt">
       <text class='co-f0'>*</text>
       <text class="item">单位名称</text>
-      <input cursor-spacing='40' bindblur='getFrName' style='margin-left:3em;' placeholder-style="color:#dedede" type='text' value='{{data.fr_name}}' placeholder='与营业执照名称一致'></input>
+      <input cursor-spacing='40' bindinput	='getFrName' style='margin-left:3em;' placeholder-style="color:#dedede" type='text' value='{{data.fr_name}}' placeholder='与营业执照名称一致'></input>
     </view>
 
     <view class="flex-center-start ipt">
       <text class='co-f0'>*</text>
       <text class='item'>联系人</text>
-      <input cursor-spacing='40' bindblur='getFrxr' style='margin-left:3em;' placeholder-style="color:#dedede" type='text' placeholder='zhang'></input>
+      <input cursor-spacing='40' value='{{data.fr_lxr}}' bindinput	='getFrxr' style='margin-left:3em;' placeholder-style="color:#dedede" type='text' placeholder='请输入联系人姓名'></input>
     </view>
 
     <view class="flex-center-start ipt">
       <text class='co-f0'>*</text>
       <text class='item'>联系方式</text>
-      <input cursor-spacing='40' bindblur='fr_lxdh' style='margin-left:3em;' placeholder-style="color:#dedede" type='text' placeholder='请输入联系电话'></input>
+      <input cursor-spacing='40' bindinput	='fr_lxdh' value='{{data.fr_lxdh}}' style='margin-left:3em;' placeholder-style="color:#dedede" type='text' placeholder='请输入联系电话'></input>
     </view>
 
     <view class="flex-center-start ipt">
       <text class='co-f0'>*</text>
       <text class='item'>法人代表</text>
-      <input cursor-spacing='40' bindblur='fr_frdb' style='margin-left:3em;' placeholder-style="color:#dedede" type='text' placeholder='与营业执照名称一致'></input>
+      <input cursor-spacing='40' bindinput	='fr_frdb' value='{{data.fr_frdb}}' style='margin-left:3em;' placeholder-style="color:#dedede" type='text' placeholder='与营业执照名称一致'></input>
     </view>
 
     <view class="flex-center-start ipt pr">
       <text class='co-f0'>*</text>
       <text class='item'>证件类型</text>
-      <input cursor-spacing='40' style='margin-left:3em;' placeholder-style="color:#dedede" type='number' value='{{value}}' placeholder='请选择证件类型'></input>
+      <input cursor-spacing='40'  style='margin-left:3em;' placeholder-style="color:#dedede" type='number' value='{{value}}' placeholder='请选择证件类型'></input>
 
       <picker bindchange="bindPickerChange" class='pf picker-warp' value="{{index}}" mode = selector range-key='name' range="{{idType}}">
         <view class="picker">{{item.name}} </view>
@@ -40,13 +40,13 @@
     <view class="flex-center-start ipt">
       <text class='co-f0'>*</text>
       <text class='item'>法人证件号码</text>
-      <input cursor-spacing='40' bindblur='fr_zjnum' style='margin-left:3em;' placeholder-style="color:#dedede" type='text' placeholder='与施工保证书一致'></input>
+      <input cursor-spacing='40' bindinput	='fr_zjnum' value='{{data.fr_zjnum}}' style='margin-left:3em;' placeholder-style="color:#dedede" type='text' placeholder='与施工保证书一致'></input>
     </view>
 
     <view class="flex-center-start ipt">
       <text class='co-f0'>*</text>
       <text class='item'>联系地址</text>
-      <input cursor-spacing='40' bindblur='fr_address' style='margin-left:3em;' placeholder-style="color:#dedede" type='text' placeholder='请输入联系地址'></input>
+      <input cursor-spacing='40' bindinput	='fr_address' value='{{data.fr_address}}' style='margin-left:3em;' placeholder-style="color:#dedede" type='text' placeholder='请输入联系地址'></input>
     </view>
         <view class='flex-center-warp bottom fz14'>
       <view class='back co-ff' bindtap='back'>返回</view>
@@ -59,7 +59,7 @@
     <view class="flex-center-start ipt">
 
       <text class="item">邮政编码</text>
-      <input cursor-spacing='40' bindblur='fr_zone' style='margin-left:3em;' placeholder-style="color:#dedede" type='text' placeholder='请输入邮政编码'></input>
+      <input cursor-spacing='40' bindinput	='fr_zone' style='margin-left:3em;' placeholder-style="color:#dedede" type='text' placeholder='请输入邮政编码'></input>
     </view>
 
     <view class="flex-center-start ipt">

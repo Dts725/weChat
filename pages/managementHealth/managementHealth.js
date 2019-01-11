@@ -30,7 +30,7 @@ Page({
       }
     })
     wx.createSelectorQuery().select('#managementHealthID').boundingClientRect().exec(res => {
-      console.log(res)
+     
       that.setData({
         clientHeight: that.data.windowHeight - res[0].top
       })

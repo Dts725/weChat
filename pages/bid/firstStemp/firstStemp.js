@@ -38,7 +38,7 @@ Page({
       fr_zjlx: '', //证件类型22身份证、21组织机构代码、23法人身份证、24税务登记证、25其他
       fr_zjnum: '', //证件号码
       fr_address: '', //联系地址
-      fr_zone: '', // 邮政编码
+
       fr_lxr: '', //联系人
       fr_lxdh: '', //法人联系电话
       fr_frdb: '', //法人代表
@@ -82,7 +82,11 @@ Page({
     this.data.data.fr_zone = e.detail.value;
   },
 
+
+
+
   submit() {
+    if (url.rules(this.data.data)) return
     wx.showLoading({
       title: '加载中',
     })
@@ -95,8 +99,14 @@ Page({
       url: url.submitApplicantBaseInfo,
       data: this.data.data,
       success: res => {
+
+        console.log(res)
         wx.hideLoading()
         if (res.data.res_data.state == 1) {
+          wx.setStorage({
+            key: 'firstStemp',
+            data: this.data.data,
+          })
           app.globalData.getMaterials = res.data.res_data;
           wx.navigateTo({
             url: `../../bid/bid`,
@@ -156,6 +166,20 @@ Page({
   onLoad: function(options) {
     this.data.data.userid = wx.getStorageSync('userid').userid;
     this.data.data.token = wx.getStorageSync('token');
+    let _this = this
+    wx.getStorage({
+      key: 'firstStemp',
+      success: function(res) {
+        console.log(res.data)
+
+        _this.setData({
+          data: res.data
+        })
+        // _this.data.data =
+      },
+    })
+
+  
 
   },
 
@@ -163,7 +187,16 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function() {
+    //回填数据
 
+    Object.keys(this.data.idType).forEach(el => {
+
+      if (this.data.idType[el].value === this.data.data.fr_zjlx) {
+        this.setData({
+          value: this.data.idType[el].name
+        })
+      }
+    })
   },
 
   /**

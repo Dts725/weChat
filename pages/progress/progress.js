@@ -23,8 +23,7 @@ Page({
         "content-type": "application/x-www-form-urlencoded"
       },
       success: res => {
-        console.dir(res.data)
-        console.dir('9999999999999')
+ 
       }
     })
   },

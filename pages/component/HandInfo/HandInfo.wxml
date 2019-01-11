@@ -1,0 +1,54 @@
+<!--pages/component/HandInfo/HandInfo.wxml-->
+<!-- 信息展示 -->
+<view class='w100 white mt-1rem padb3'>
+  <view class='flex-center w100 fz15 fw700'>
+    <text bindtap='_bjInfo' class='w50 t-center padt-1rem padb-1rem padr-1rem padl-1rem {{bjClass}}'>办件信息</text>
+    <text bindtap='_bjProgress' class='w50 t-center padt-1rem padb-1rem padr-1rem padl-1rem {{progressClass}}'>进度查询</text>
+  </view>
+
+  <view wx:if='{{flag}}'>
+    <view class='fz14 flex-center'>
+      <view class='flex-center-between bord_ce w90 padl-1rem padr-1rem'>
+        <text class='padt-1rem padb-1rem'>申请单位</text>
+        <text class='padt-1rem padb-1rem co-ce'>{{bjInfo.fr_name}}</text>
+      </view>
+    </view>
+
+    <view class='fz14 flex-center'>
+      <view class='flex-center-between bord_ce  w90 padl-1rem padr-1rem'>
+        <text class='padt-1rem padb-1rem'>联系人</text>
+        <text class='padt-1rem padb-1rem co-ce'>{{bjInfo.fr_lxr}}</text>
+      </view>
+    </view>
+
+    <view class='fz14 flex-center'>
+      <view class='flex-center-between bord_ce  w90 padl-1rem padr-1rem'>
+        <text class='padt-1rem padb-1rem'>地址</text>
+        <text class='padt-1rem padb-1rem co-ce'>{{bjInfo.fr_zjhm}}</text>
+      </view>
+    </view>
+
+    <view class='fz14 flex-center'>
+      <view class='flex-center-between bord_ce  w90 padl-1rem padr-1rem'>
+        <text class='padt-1rem padb-1rem'>联系电话</text>
+        <text class='padt-1rem padb-1rem co-ce'>{{bjInfo.fr_lxrsj}}</text>
+      </view>
+    </view>
+
+    <view class='fz14 flex-center'>
+      <view class='flex-center-between bord_ce  w90 padl-1rem padr-1rem'>
+        <text class='padt-1rem padb-1rem'>施工单位</text>
+        <text class='padt-1rem padb-1rem co-ce'>云话科技</text>
+      </view>
+    </view>
+
+    <view class='fz14 flex-center'>
+      <view class='flex-center-between bord_ce  w90 padl-1rem padr-1rem'>
+        <text class='padt-1rem padb-1rem'>联系电话</text>
+        <text class='padt-1rem padb-1rem co-ce'>云话科技</text>
+      </view>
+    </view>
+  </view>
+  <progress wx-if="{{!flag}}" progressData='{{bjInfoProgress}}'></progress>
+
+</view>

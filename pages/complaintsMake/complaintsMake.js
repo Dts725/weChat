@@ -9,7 +9,7 @@ Page({
     data: {
       userid: "",
       token: '',
-      bjid: '',
+      bjid: '12',
 
       'ts.ts_fwzx_id': 'b43de5b0a78249169998d85cbd3f4ec2',
       'ts.ts_fwzx': '天津市经济开发区服务中心',
@@ -26,7 +26,15 @@ Page({
       'ts.ts_wtms': "" //问题描述
 
     },
-    ts_id: ""
+    ts_id: "12"
+  },
+
+  //返回
+
+  back () {
+    wx.navigateTo({
+      url: '../index/index',
+    })
   },
 
   //提交
@@ -34,6 +42,8 @@ Page({
     this.data.data.token = wx.getStorageSync('token')
     this.data.data['ts.ts_id'] = this.data.ts_id
     this.data.data.userid = wx.getStorageSync('userid').userid
+
+    if (url.rules(this.data.data)) return
     wx.request({
       url: url.subPjTs,
       method: 'post',

@@ -1,11 +1,11 @@
-<view class='fz14 body h-100vh flex-center-start-column-center warp'>
-
-  <view  wx:for="{{dataInfo}}" wx:for-index="idx" wx:for-item='item' wx:key='idx' data-parmas='{{item}}' bindtap='routeProgressInfo' class='flex-center-between item white'>
+<view class='fz14 body w100 flex-center-start-column-center  h-100vh padt-1rem'>
+  <view wx:for="{{dataInfo}}" wx:for-index="idx" wx:for-item='item' wx:key='idx' data-parmas='{{item}}' bindtap='routeProgressInfo' class='flex-center-between w100 mt-2rem   item white'>
     <view class='flex-center-start-column'>
       <text class='text'>{{item.ywsx_sxmc}} </text>
       <text class='co-ce text'>{{item.bj_ctime}}</text>
     </view>
-    <view class='co-ce text'><image style='height:16px;width:16px;' src='../../image/right_row.png'></image></view>
+    <view class='co-ce text'>
+      <image style='height:16px;width:16px;' src='../../image/right_row.png'></image>
+    </view>
   </view>
-
 </view>

@@ -21,6 +21,8 @@ Page({
   },
   //获取授权
   warrant() {
+
+    if (url.rules(this.data.data)) return
     wx.request({
       url: url.warrant,
       data: {
@@ -34,6 +36,8 @@ Page({
           key: "token",
           data: res.data.res_data.token
         })
+        url.getToken();
+
       }
     })
   },
@@ -43,6 +47,7 @@ Page({
   getMobile(e){
    
     this.data.data.mobile = e.detail.value;
+    this.data.data.token = wx.getStorageSync('token');
   },
   getPwd(e){
     this.data.data.pwd = e.detail.value;
@@ -50,12 +55,14 @@ Page({
 
   //登录连接
   loginSubmit(){
+    if (url.rules(this.data.data)) return
     wx.request({
       url: url.loginUrl,
       data : this.data.data,
       success : res => {
-        if (res.data.res_data.isok==1){
+        if (res.data.res_data.state==1){
           this.warrant();
+          wx.setStorageSync('isLogin', 1)
           app.globalData.loginInfo = res.data.res_data;
           wx.setStorage({
             key: "userid",

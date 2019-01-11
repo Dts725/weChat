@@ -1,11 +1,16 @@
 const url = 'https://xzfwzx.teda.gov.cn/v1';
 const imgUrl = 'https://xzfwzx.teda.gov.cn'
 import app from './app.js'
-const tokens = wx.getStorageSync('token')
-console.log(tokens)
-const token = `&client_id=yhxcx&client_secret=880055513D7EF8FAF30E7DA7B03B9582&token=${tokens}`
+ function  tokens () {
+ 
+    return wx.getStorageSync('token')
+  }
+
+ 
+const token = `&client_id=yhxcx&client_secret=880055513D7EF8FAF30E7DA7B03B9582&token=${wx.getStorageSync('token')}`
+
 const detailUrl = {
-  warrant: url +`/api?method=tjkfqExchange.tjoa.auth${token}`,//授权接口
+  warrant: url +`/api?method=tjkfqExchange.tjoa.auth`,//授权接口
   registerUrl: url + `/api?method=tjkfqExchange.tjoa.register${token}`,//注册接口
   loginUrl: url + `/api?method=tjkfqExchange.yhxcx.login${token}`,//登录接口i
   submitApplicantBaseInfo: url + `/api?method=tjkfqExchange.yhxcx.submitApplicantBaseInfo`,//事项申办提交进本信息
@@ -19,7 +24,28 @@ const detailUrl = {
   onlineQuestion: url + '/api',//在线提问接口
   getpjid: url + '/api?method=tjkfqExchange.yhxcx.getpjid', //获取吐槽接口pjid
   downLoad: url + '/downloadFileHn.do?id=b1fdd8001e594897848c6be18e36c568',//下载地址
-  imgUrl: imgUrl
+  imgUrl: imgUrl,//图片路径
+  rules: rules,//校验非空
+  getCode: url + `/api?method=tjkfqExchange.yhxcx.getPhoneVerifyCodeForResetpw`,
+  getToken : tokens,
+  viewBJBZInfoAndMaterials: url + `/api?method=tjkfqExchange.yhxcx.viewBJBZInfoAndMaterials`
 };
+
+//校验非空
+function rules(e) {
+  let flag = false;
+
+  Object.keys(e).forEach(key => {
+    if (!e[key]) {
+      wx.showToast({
+        title: '请检查输入 ! ! !',
+        icon: 'none',
+      })
+      flag = true
+
+    }
+  })
+  return flag
+}
 
 module.exports = detailUrl;

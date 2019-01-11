@@ -1,0 +1,104 @@
+/* pages/component/HandInfo/HandInfo.wxss */
+.info-top {
+  box-sizing: border-box;
+  border-width: 1px 1px 0 0;
+  border-color: #e15244;
+  border-style: solid
+}
+.info-top02 {
+  box-sizing: border-box;
+
+  border-width: 0px 1px 1px 0px;
+  border-color: #e15244;
+  border-style: solid
+}
+.process-bottom {
+  box-sizing: border-box;
+
+  border-width: 0 0 1px 0px;
+   border-color:#e15244;
+  border-style: solid
+}
+.process-bottom02 {
+  box-sizing: border-box;
+
+  border-width: 1px 0 0 0;
+   border-color:#e15244;
+  border-style: solid
+}
+.white {
+  background-color: #fff;
+}
+
+.mt-1rem {
+  margin-top: 0.5rem;
+}
+
+
+/* padding */
+
+.padl-1rem {
+  padding-left: 0.5rem;
+}
+.padl-2rem {
+  padding-left: 1rem;
+}
+
+.padr-1rem {
+  padding-right: 0.5rem;
+}
+.padr-2rem {
+  padding-right: 1rem;
+}
+
+.padt-1rem {
+  padding-top: 1rem;
+}
+
+.padb-1rem {
+  padding-bottom: 1rem;
+}
+
+.padl-1rem {
+  padding-left: 0.5rem;
+}
+.w50 {
+  width: 50%;
+}
+.w90{
+  width: 90%;
+}
+.w100 {
+  width: 100%;
+}
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex-center-between {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+}
+
+.fw700 {
+  font-weight: 700;
+}
+.bord_ce {
+  border-bottom-style:solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #cecece; 
+}
+.co-ce {
+  color: #cecece;
+}
+
+.padb3 {
+  padding-bottom: 1.5rem;
+}
+
+.t-center {
+  text-align: center;
+}

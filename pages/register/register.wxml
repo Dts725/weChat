@@ -2,12 +2,14 @@
 <view>
   <image class='w100' src='../image/banner_register.jpg' mode='widthFix'></image>
   <view class='flex-center-column fz14'>
-    <input placeholder-class="co-f2" bindblur='getName' placeholder='请输入登录名'></input>
-    <input placeholder-class="co-f2" bindblur='getXmName' placeholder='请输入用户姓名或单位名称'></input>
-    <input placeholder-class="co-f2" bindblur='getIdCard' placeholder='请输入身份证'></input>
-    <input placeholder-class="co-f2" bindblur='getPhone' placeholder='请输入手机号'></input>
-    <input placeholder-class="co-f2" bindblur='getPwd' placeholder='请输入密码'></input>
-   
+    <input placeholder-class="co-f2" bindinput='getXmName' placeholder='请输入姓名'></input>
+    <input placeholder-class="co-f2" bindinput='getIdCard' type='idcard' placeholder='请输入身份证'></input>
+    <input placeholder-class="co-f2" bindinput='getPhone' placeholder='请输入手机号'></input>
+    <input placeholder-class="co-f2" class='pr' bindblur='getCode' placeholder='输入验证码'>
+    <view bindtap='getCodeFn' class='pf get-code co-ff {{addClass}}'>{{numberCode}}</view>
+    </input>
+    <input placeholder-class="co-f2" bindinput='getPwd' placeholder='请输入密码'></input>
+
     <button bindtap='register' class='btn co-ff'>立即注册</button>
     <view bindtap='login'>
       <text class='co-ce'>以有账户</text>

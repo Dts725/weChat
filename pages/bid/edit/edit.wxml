@@ -5,22 +5,22 @@
     <text class="fw700">基本信息</text>
     <view class="flex-center-start ipt">
       <text class="item">申请单位</text>
-      <input cursor-spacing='40' bindblur='base_sqdw' style='margin-left:3em;' placeholder-style="color:#dedede" type='text' placeholder='与营业执照名称一致'></input>
+      <input cursor-spacing='40' bindinput='base_sqdw' style='margin-left:3em;' placeholder-style="color:#dedede" type='text' placeholder='与营业执照名称一致'></input>
     </view>
 
     <view class="flex-center-start ipt">
       <text class='item'>联系人</text>
-      <input cursor-spacing='40' bindblur='base_lxr' style='margin-left:3em;' placeholder-style="color:#dedede" type='text' placeholder='zhang'></input>
+      <input cursor-spacing='40' bindinput='base_lxr' style='margin-left:3em;' placeholder-style="color:#dedede" type='text' placeholder='请输入联系人姓名'></input>
     </view>
 
     <view class="flex-center-start ipt">
       <text class='item'>地址</text>
-      <input cursor-spacing='40' bindblur='base_dz' style='margin-left:3em;' placeholder-style="color:#dedede" type='text' placeholder='与营业执照名称一致'></input>
+      <input cursor-spacing='40' bindinput='base_dz' style='margin-left:3em;' placeholder-style="color:#dedede" type='text' placeholder='与营业执照名称一致'></input>
     </view>
 
     <view class="flex-center-start ipt">
       <text class='item'>联系电话</text>
-      <input cursor-spacing='40' bindblur='base_sqdwlxdh' style='margin-left:3em;' placeholder-style="color:#dedede" type='number' placeholder='请输入联系电话'></input>
+      <input cursor-spacing='40' bindinput='base_sqdwlxdh' style='margin-left:3em;' placeholder-style="color:#dedede" type='number' placeholder='请输入联系电话'></input>
     </view>
 
     <view class="flex-center-start ipt">
@@ -30,7 +30,7 @@
 
     <view class="flex-center-start ipt">
       <text class='item'>联系电话</text>
-      <input cursor-spacing='40' bindblur='base_sgdwlxdh' style='margin-left:3em;' placeholder-style="color:#dedede" type='text' placeholder='请输入联系电话'></input>
+      <input cursor-spacing='40' bindinput='base_sgdwlxdh' style='margin-left:3em;' placeholder-style="color:#dedede" type='text' placeholder='请输入联系电话'></input>
     </view>
   </view>
 
@@ -47,7 +47,7 @@
 
     <view class="flex-center-start ipt">
       <text class="item">广告内容</text>
-      <input cursor-spacing='40' style='margin-left:3em;' bindblur='ggnr' placeholder-style="color:#dedede" type='text' value="{{ggnr}}" placeholder='请输入广告内容'></input>
+      <input cursor-spacing='40' style='margin-left:3em;' bindinput='ggnr' placeholder-style="color:#dedede" type='text' value="{{ggnr}}" placeholder='请输入广告内容'></input>
   
     </view>
 
@@ -172,17 +172,17 @@
     </view>
     <view class="flex-center-start ipt">
       <text class="item">设置地点</text>
-      <input cursor-spacing='40' bindblur='szdd' style='margin-left:3em;' placeholder-style="color:#dedede" type='text' placeholder='一般与租赁合同地址一致'></input>
+      <input cursor-spacing='40' bindinput='szdd' style='margin-left:3em;' placeholder-style="color:#dedede" type='text' placeholder='一般与租赁合同地址一致'></input>
     </view>
 
     <view class="flex-center-start ipt">
       <text class='item'>设置规格</text>
-      <input cursor-spacing='40' bindblur='szgg' style='margin-left:3em;' placeholder-style="color:#dedede" type='text' placeholder='长*宽*高*,单位毫米'></input>
+      <input cursor-spacing='40' bindinput='szgg' style='margin-left:3em;' placeholder-style="color:#dedede" type='text' placeholder='长*宽*高*,单位毫米'></input>
     </view>
 
     <view class="flex-center-start ipt pr">
       <text class='item'>设置形式</text>
-      <input cursor-spacing='40' bindblur='ssxs' value='{{ssxsmc}}' style='margin-left:3em;' placeholder-style="color:#dedede" type='text' placeholder='请选择设置形式'></input>
+      <input cursor-spacing='40' bindinput='ssxs' value='{{ssxsmc}}' style='margin-left:3em;' placeholder-style="color:#dedede" type='text' placeholder='请选择设置形式'></input>
         <picker bindchange="ssxs" class=' pf czjg' value="{{index}}" mode = selector range-key='name' range="{{ssxsgArray}}">
    <view class="picker">{{item.name}}</view>
         </picker>
@@ -190,7 +190,7 @@
 
     <view class="flex-center-start ipt pr">
       <text class='item'>材料结构</text>
-      <input cursor-spacing='40' bindblur='ssxs' value='{{czjgmc}}'  style='margin-left:3em;' placeholder-style="color:#dedede" type='text' placeholder='材料结构'></input>
+      <input cursor-spacing='40' bindinput='ssxs' value='{{czjgmc}}'  style='margin-left:3em;' placeholder-style="color:#dedede" type='text' placeholder='材料结构'></input>
       
        <picker class=' pf czjg' bindchange="czjg" value="{{index}}" range-key='name' range="{{czjgArray}}">
     <view class="picker">{{item.name}}</view>
@@ -199,7 +199,7 @@
 
     <view class="flex-center-start ipt pr">
       <text class='item'>光源形式</text>
-      <input cursor-spacing='40' bindblur='ssxs' value='{{gyxsmc}}'  style='margin-left:3em;' placeholder-style="color:#dedede" type='text' placeholder='材料结构'></input>
+      <input cursor-spacing='40' bindinput='ssxs' value='{{gyxsmc}}'  style='margin-left:3em;' placeholder-style="color:#dedede" type='text' placeholder='材料结构'></input>
             <picker bindchange="gyxs" class='pf czjg'  value="{{index}}" range-key='name' range="{{gyxsArray}}">
           <view class="picker">{{item.name}}</view>
        </picker>
@@ -215,6 +215,6 @@
 
    <view class='flex-center-warp bottom fz14 white'>
       <view class='back co-ff' bindtap='back'>返回</view>
-      <view class='next co-ff' bindtap='submit'>保存</view>
+      <view class='next co-ff' bindtap='submitEdit'>保存</view>
     </view>
 </view>

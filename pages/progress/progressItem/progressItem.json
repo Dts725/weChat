@@ -1,3 +1,6 @@
 {
-  "navigationBarTitleText": "进度查询"
+  "navigationBarTitleText": "进度查询",
+      "usingComponents": {
+      "top": "/pages/component/HandlingStatus/HandlingStatus"
+    }
 }

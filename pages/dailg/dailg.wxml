@@ -7,7 +7,7 @@
   <text style='line-height:2em;'>登录后开发者将获取一些权限</text>
   <text style='text-indent:3em;line-height:2em;' class='co-99'>.获取你的公开信息(昵称\头像等)</text>
 </view>
-<button wx:if="{{canIUse}}" open-type="getUserInfo" style='width:100%;background-color:#2F9833;' bindgetuserinfo="bindGetUserInfo">授权登录</button>
+<button wx:if="{{canIUse}}" open-type="getUserInfo" style='width:95%;background-color:#2F9833;' bindgetuserinfo="bindGetUserInfo">授权登录</button>
 <view wx:else>请升级微信版本</view>
 
 </view>

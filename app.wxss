@@ -1,4 +1,4 @@
-/**app.wxss**/
+ /**app.wxss**/
 
 .container {
   height: 100%;
@@ -25,9 +25,15 @@
 .w80 {
   width: 80%;
 }
+.w90 {
+  width: 90%;
+}
 
 .w75 {
   width: 75%;
+}
+.w50 {
+  width: 50%;
 }
 
 .w20 {
@@ -121,6 +127,13 @@
   align-items: flex-start;
   align-content: flex-start;
 }
+.flex-center-between-column {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+}
 
 .flex-center-start-column-reserve {
   display: flex;
@@ -151,6 +164,9 @@
 .ml-1rem {
   margin-left: 0.5rem;
 }
+.mr-1rem {
+  margin-right: 0.5rem;
+}
 
 .ml-2rem {
   margin-left: 1rem;
@@ -169,9 +185,15 @@
 .padl-1rem {
   padding-left: 0.5rem;
 }
+.padl-2rem {
+  padding-left: 1rem;
+}
 
 .padr-1rem {
   padding-right: 0.5rem;
+}
+.padr-2rem {
+  padding-right: 1rem;
 }
 
 .padt-1rem {
@@ -216,6 +238,10 @@
   font-size: 15px;
 }
 
+.fz16 {
+  font-size: 16px;
+}
+
 .fw700 {
   font-weight: 700;
 }
@@ -228,6 +254,9 @@ view {
 
 .co-99 {
   color: #999;
+}
+.co-44 {
+  color: #444;
 }
 
 .co-ce {
@@ -285,3 +314,23 @@ view {
 .border-rad {
   border-radius: 5px;
 }
+
+/* 禁止点击 */
+.disabled {
+    pointer-events: none;
+    cursor: default;
+    opacity: 0.6;
+    color: #444;
+    background-color: #cecece !important;
+}
+.bord_ce {
+  border-bottom-style:solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #cecece; 
+}
+.bord_top_e2 {
+  border-top-style:solid;
+  border-top-width: 1px;
+  border-top-color: #e2e2e2; 
+}
+

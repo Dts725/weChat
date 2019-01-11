@@ -1,6 +1,5 @@
 {
   "pages": [
-    
     "pages/index/index",
     "pages/bid/firstStemp/firstStemp",
     "pages/bid/bid",
@@ -21,12 +20,15 @@
     "pages/implementation/implementation",
     "pages/managementHealth/managementHealth",
     "pages/dailg/dailg",
-    "pages/bid/signature/signature"
+    "pages/bid/signature/signature",
+    "pages/component/HandlingStatus/HandlingStatus",
+    "pages/progress/progressItemInfo/progressItemInfo",
+    "pages/component/HandInfo/HandInfo"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "户外广告设置许可",
+    "navigationBarTitleText": "户外广告设施许可",
     "navigationBarTextStyle": "black"
   }
 }

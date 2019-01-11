@@ -182,6 +182,8 @@ Page({
 
   //上传查询列表
   getMaterials() {
+
+    console.log('9999999999999999999')
     wx.request({
       url: url.getMaterials,
       data: this.data.queryData,
@@ -189,10 +191,10 @@ Page({
         if (res.data.res_data.state == 0) {
           wx.showToast({
             title: '您未登录或登录失效请重新登录',
-            success: 'none',
+            icon: 'none',
           })
           wx.navigateTo({
-            url: '../../login',
+            url: '../login',
           })
         } else {
           this.data.uploadFileInfo = res.data.res_data.materials
@@ -276,13 +278,13 @@ Page({
   onLoad: function(options) {
     this.data.queryData.sxid = app.globalData.getMaterials.sxid;
     this.data.queryData.bjid = app.globalData.getMaterials.bjid;
-    this.getMaterials();
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function() {
+    this.getMaterials();
 
   },
 
