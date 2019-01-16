@@ -5,32 +5,32 @@
     <text class="fw700">基本信息</text>
     <view class="flex-center-start ipt">
       <text class="item">申请单位</text>
-      <input cursor-spacing='40' bindinput='base_sqdw' style='margin-left:3em;' placeholder-style="color:#dedede" type='text' placeholder='与营业执照名称一致'></input>
+      <input cursor-spacing='40' bindinput='base_sqdw' style='margin-left:3em;' value='{{data["base.base_sqdw"]}}' placeholder-style="color:#dedede" type='text' placeholder='与营业执照名称一致'></input>
     </view>
 
     <view class="flex-center-start ipt">
       <text class='item'>联系人</text>
-      <input cursor-spacing='40' bindinput='base_lxr' style='margin-left:3em;' placeholder-style="color:#dedede" type='text' placeholder='请输入联系人姓名'></input>
+      <input cursor-spacing='40' bindinput='base_lxr' style='margin-left:3em;' value='{{data["base.base_lxr"]}}' placeholder-style="color:#dedede" type='text' placeholder='请输入联系人姓名'></input>
     </view>
 
     <view class="flex-center-start ipt">
       <text class='item'>地址</text>
-      <input cursor-spacing='40' bindinput='base_dz' style='margin-left:3em;' placeholder-style="color:#dedede" type='text' placeholder='与营业执照名称一致'></input>
+      <input cursor-spacing='40' bindinput='base_dz' style='margin-left:3em;' value='{{data["base.base_dz"]}}' placeholder-style="color:#dedede" type='text' placeholder='与营业执照名称一致'></input>
     </view>
 
     <view class="flex-center-start ipt">
       <text class='item'>联系电话</text>
-      <input cursor-spacing='40' bindinput='base_sqdwlxdh' style='margin-left:3em;' placeholder-style="color:#dedede" type='number' placeholder='请输入联系电话'></input>
+      <input cursor-spacing='40' bindinput='base_sqdwlxdh' style='margin-left:3em;' value='{{data["base.base_sqdwlxdh"]}}' placeholder-style="color:#dedede" type='number' placeholder='请输入联系电话'></input>
     </view>
 
     <view class="flex-center-start ipt">
       <text class='item'>施工单位</text>
-      <input cursor-spacing='40'  bindtap='base_sgdw' style='margin-left:3em;' placeholder-style="color:#dedede" type='text' placeholder='与施工保证书一致'></input>
+      <input cursor-spacing='40'  bindtap='base_sgdw' style='margin-left:3em;' value='{{data["base.base_sgdw"]}}' placeholder-style="color:#dedede" type='text' placeholder='与施工保证书一致'></input>
     </view>
 
     <view class="flex-center-start ipt">
       <text class='item'>联系电话</text>
-      <input cursor-spacing='40' bindinput='base_sgdwlxdh' style='margin-left:3em;' placeholder-style="color:#dedede" type='text' placeholder='请输入联系电话'></input>
+      <input cursor-spacing='40' bindinput='base_sgdwlxdh' style='margin-left:3em;' value='{{data["base.base_sgdwlxdh"]}}' placeholder-style="color:#dedede" type='text' placeholder='请输入联系电话'></input>
     </view>
   </view>
 
@@ -172,12 +172,12 @@
     </view>
     <view class="flex-center-start ipt">
       <text class="item">设置地点</text>
-      <input cursor-spacing='40' bindinput='szdd' style='margin-left:3em;' placeholder-style="color:#dedede" type='text' placeholder='一般与租赁合同地址一致'></input>
+      <input cursor-spacing='40' bindinput='szdd' style='margin-left:3em;' value='{{data["szdd"]}}' placeholder-style="color:#dedede" type='text' placeholder='一般与租赁合同地址一致'></input>
     </view>
 
     <view class="flex-center-start ipt">
       <text class='item'>设置规格</text>
-      <input cursor-spacing='40' bindinput='szgg' style='margin-left:3em;' placeholder-style="color:#dedede" type='text' placeholder='长*宽*高*,单位毫米'></input>
+      <input cursor-spacing='40' bindinput='szgg' style='margin-left:3em;' value='{{data["szgg"]}}' placeholder-style="color:#dedede" type='text' placeholder='长*宽*高*,单位毫米'></input>
     </view>
 
     <view class="flex-center-start ipt pr">

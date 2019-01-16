@@ -3,6 +3,11 @@
   width: 85%;
   border-radius: 5px;
   margin: 0.5rem;
+  box-shadow: 0px 0px 10px  #aaa ;
+
+}
+.info {
+  top: 1.5rem;
 }
 .text {
   line-height: 1.5em;
@@ -36,4 +41,14 @@ background-color: #e15244;
 .img{
   width: 1rem;
   height: 1rem;
+  
 }
+  .padd-darsh{
+    width: 100%;
+    padding: 0.8rem 0.1rem 0.8rem 0.1rem;
+    border-bottom: 1px dashed #cecece;                                                                                                                                                                                                 
+  }
+  .top {
+    height: 4rem;
+    background-color: #e15244;
+  }

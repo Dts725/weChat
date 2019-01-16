@@ -207,7 +207,9 @@ Page({
   //提交申请材料
   submit () {
     let _this = this;
-
+    wx.showLoading({
+      title: '加载中',
+    })
     let data = {
       token: wx.getStorageSync('token'),
       userid: wx.getStorageSync('userid').userid,
@@ -223,6 +225,8 @@ Page({
       //   "content-type": "application/x-www-form-urlencoded"
       // },
       success : res => {
+        wx.hideLoading()
+
           if(res.data.res_data.state ===1) {
             wx.showToast({
               title: '保存成功',
@@ -278,6 +282,7 @@ Page({
   onLoad: function(options) {
     this.data.queryData.sxid = app.globalData.getMaterials.sxid;
     this.data.queryData.bjid = app.globalData.getMaterials.bjid;
+    this.data.queryData.token = wx.getStorageSync('token');
   },
 
   /**

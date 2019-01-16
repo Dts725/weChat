@@ -30,6 +30,65 @@ Page({
       },
       success: res => {
         if(res.data.res_data.state === 1) {
+          //替换状态吗
+          res.data.res_data.list.forEach((el,index) => {
+            switch (el.ywsx_state) {
+              case 12: {
+                res.data.res_data.list[index].ywsx_name = '已提交';
+                break;
+              }
+              case 13: {
+                res.data.res_data.list[index].ywsx_name = '预审补证';
+                break;
+              }
+              case 14: {
+                res.data.res_data.list[index].ywsx_name = '预审通过';
+                break;
+              }
+              case 20: {
+                res.data.res_data.list[index].ywsx_name = '授理通过';
+                break;
+              }
+              case 21: {
+                res.data.res_data.list[index].ywsx_name = '审查';
+                break;
+              }
+              case 23: {
+                res.data.res_data.list[index].ywsx_name = '退件审批';
+                break;
+              }
+              case 24: {
+                res.data.res_data.list[index].ywsx_name = '废件审批';
+                break;
+              }
+              case 31: {
+                res.data.res_data.list[index].ywsx_name = '补证';
+                break;
+              }
+              case 32: {
+                res.data.res_data.list[index].ywsx_name = '特别程序';
+                break;
+              }
+              case 34: {
+                res.data.res_data.list[index].ywsx_name = '上报';
+                break;
+              }
+              case 35: {
+                res.data.res_data.list[index].ywsx_name = '上报通过';
+                break;
+              }
+              case 45: {
+                res.data.res_data.list[index].ywsx_name = '办结';
+                break;
+              }
+              default : {
+                break;
+              }
+              
+            }
+          })
+
+     
           this.setData({
             dataInfo: res.data.res_data.list
           })

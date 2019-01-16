@@ -279,6 +279,13 @@ view {
   color: #fff;
 }
 
+.co-66{
+  color: #666;
+}
+.co-33 {
+  color: #333;
+}
+
 .co-f0 {
   color: #f00;
 }
