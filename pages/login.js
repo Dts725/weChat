@@ -30,8 +30,6 @@ Page({
         client_secret: '880055513D7EF8FAF30E7DA7B03B9582' //小程序唯一访问密钥
       },
       success: res => {
-        console.log('88888888888888888888888888888')
-        console.log(res.data.res_data.token)
         wx.setStorage({
           key: "token",
           data: res.data.res_data.token
@@ -60,7 +58,7 @@ Page({
       url: url.loginUrl,
       data : this.data.data,
       success : res => {
-        if (res.data.res_data.state==1){
+        if (res.data.res_data.state == 1 && res.data.res_data.isok === 1){
           this.warrant();
           wx.setStorageSync('isLogin', 1)
           app.globalData.loginInfo = res.data.res_data;
@@ -73,7 +71,7 @@ Page({
            icon: 'success',
            duration: 2000
          })
-      wx.navigateTo({
+          wx.reLaunch({
            url: './index/index',
          })
        } else {

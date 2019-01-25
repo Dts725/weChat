@@ -2,7 +2,7 @@
   <image class='w100' src='../image/secondBanner/banner03.jpg' mode='widthFix'></image>
   <scroll-view scroll-y  class='warp fz14' id='pointsReadID' style="height: {{scrollHeight ? scrollHeight+'px': 'aotuo'}};">
     <view class='h1'>
-      关于户外广告审批材料准备的注意事项：
+     关于户外广告审批材料准备的注意事项：
     </view>
     <view>
       一、《设置户外广告设施行政许可申请书》；

@@ -42,7 +42,7 @@ Page({
     this.data.data.token = wx.getStorageSync('token')
     this.data.data['ts.ts_id'] = this.data.ts_id
     this.data.data.userid = wx.getStorageSync('userid').userid
-
+    console.log(this.data.data)
     if (url.rules(this.data.data)) return
     wx.request({
       url: url.subPjTs,

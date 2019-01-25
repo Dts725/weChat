@@ -4,7 +4,6 @@ Component({
    * 组件的属性列表
    */
 
-
   properties: {
 
     bjInfoData: {
@@ -16,6 +15,7 @@ Component({
         if(newVal) {
           this.setData({
             bjInfo: newVal.zt,
+            construction: newVal.construction,
             bjInfoProgress: newVal.history
           }
           )
@@ -46,13 +46,20 @@ Component({
    */
   methods: {
     _bjInfo() {
+      
+      this.triggerEvent('myFlag', this.data.flag, this.data.flag)
+ 
       this.setData({
         flag: true,
         bjClass: 'info-top',
         progressClass: 'process-bottom'
       })
     },
+
     _bjProgress() {
+
+
+      this.triggerEvent('myFlag',this.data.flag,this.data.flag)
       this.setData({
         bjClass: 'info-top02',
         progressClass: 'process-bottom02',

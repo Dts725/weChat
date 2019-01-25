@@ -27,7 +27,6 @@ Page({
    */
   onReady: function() {
     this.isLogin()
-  
   },
 
   //是否登录

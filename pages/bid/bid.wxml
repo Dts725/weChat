@@ -134,5 +134,10 @@
     </view>
   </view>
 
-  <button bindtap='submit' class='btn co-ff fz14'>提交申请</button>
+  <!-- <button bindtap='submit' class='btn co-ff fz14'>提交申请</button> -->
+
+     <view wx:if="{{!disabled}}" class='flex-center-warp bottom fz14 white'>
+      <view class='back co-ff' bindtap='back'>返回</view>
+      <view class='next co-ff' bindtap='submit'>提交</view>
+    </view>
 </view>

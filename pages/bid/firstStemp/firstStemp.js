@@ -42,7 +42,6 @@ Page({
       fr_lxr: '', //联系人
       fr_lxdh: '', //法人联系电话
       fr_frdb: '', //法人代表
-      token: ''
     }
 
   },
@@ -60,6 +59,7 @@ Page({
   //获取联系方式
   fr_lxdh(e) {
     this.data.data.fr_lxdh = e.detail.value;
+    
   },
 
   //获取法人代表
@@ -86,11 +86,15 @@ Page({
 
 
   submit() {
+    this.data.data.token = wx.getStorageSync('token');
+
+    console.log(this.data.data)
     if (url.rules(this.data.data)) return
+    if (url.rulesPhone(this.data.data.fr_lxdh)) return;
+
     wx.showLoading({
       title: '加载中',
     })
-
     wx.request({
       method: 'post',
       header: {
@@ -151,8 +155,8 @@ Page({
     })
   },
   back() {
-    wx.navigateBack({
-
+    wx.reLaunch({
+        url : '../../index/index'
     })
   },
   next() {
@@ -165,7 +169,8 @@ Page({
    */
   onLoad: function(options) {
     this.data.data.userid = wx.getStorageSync('userid').userid;
-    this.data.data.token = wx.getStorageSync('token');
+    // this.data.data.token = wx.getStorageSync('token');
+    // console.log(this.data.data.token)
     let _this = this
     wx.getStorage({
       key: 'firstStemp',

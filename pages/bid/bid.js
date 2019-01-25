@@ -38,6 +38,7 @@ Page({
         this.setData({
           img0 : imgUrl
         })
+        this.steStroge('img0',imgUrl)
         break;
       }
       case '1' : 
@@ -45,6 +46,7 @@ Page({
         this.setData({
           img1 : imgUrl
         })
+          this.steStroge('img1', imgUrl)
           break;
 
       }
@@ -53,6 +55,7 @@ Page({
         this.setData({
           img2 : imgUrl
         })
+          this.steStroge('img2', imgUrl)
           break;
 
       }
@@ -61,6 +64,7 @@ Page({
         this.setData({
           img3 : imgUrl
         })
+          this.steStroge('img3', imgUrl)
           break;
 
       }
@@ -69,6 +73,7 @@ Page({
         this.setData({
           img4 : imgUrl
         })
+          this.steStroge('img4', imgUrl)
           break;
 
       }
@@ -77,6 +82,7 @@ Page({
         this.setData({
           img5 : imgUrl
         })
+          this.steStroge('img5', imgUrl)
           break;
 
       }
@@ -85,6 +91,7 @@ Page({
         this.setData({
           img6 : imgUrl
         })
+          this.steStroge('img6', imgUrl)
           break;
 
       }
@@ -93,6 +100,7 @@ Page({
         this.setData({
           img7 : imgUrl
         })
+          this.steStroge('img7', imgUrl)
           break;
 
       }
@@ -101,6 +109,7 @@ Page({
         this.setData({
           img8 : imgUrl
         })
+          this.steStroge('img8', imgUrl)
           break;
 
       }
@@ -109,6 +118,7 @@ Page({
         this.setData({
           img9 : imgUrl
         })
+          this.steStroge('img9', imgUrl)
           break;
 
       }
@@ -180,10 +190,26 @@ Page({
 
   },
 
+  //数据本地存储
+
+    steStroge(key,data) {
+        wx.setStorageSync(key, data)
+    },
+    //获取本地数据
+
+    getStroge(key) {
+    return  wx.getStorageSync(key) 
+    },
+    //移除strog 
+
+    remStroge(key) {
+      wx.removeStorageSync(key)
+    },
+
   //上传查询列表
   getMaterials() {
 
-    console.log('9999999999999999999')
+
     wx.request({
       url: url.getMaterials,
       data: this.data.queryData,
@@ -252,6 +278,12 @@ Page({
     })
   },
 
+  back () {
+    wx.reLaunch({
+      url: './firstStemp/firstStemp',
+    })
+  },
+
   //点击分享
   share(){
     wx.showShareMenu({
@@ -260,8 +292,6 @@ Page({
   },
 
   promise() {
-
-    console.log('0999999999999999999999')
     wx.showShareMenu({
       withShareTicket: true,
       success : res => {
@@ -283,6 +313,32 @@ Page({
     this.data.queryData.sxid = app.globalData.getMaterials.sxid;
     this.data.queryData.bjid = app.globalData.getMaterials.bjid;
     this.data.queryData.token = wx.getStorageSync('token');
+      console.log(options)
+    if(options.edit === '1') {
+      this.setData({
+        img0: this.getStroge('img0'),
+        img1: this.getStroge('img1'),
+        img2: this.getStroge('img2'),
+        img3: this.getStroge('img3'),
+        img4: this.getStroge('img4'),
+        img5: this.getStroge('img5'),
+        img6: this.getStroge('img6'),
+        img7: this.getStroge('img7'),
+        img8: this.getStroge('img8'),
+        img9: this.getStroge('img9')
+      })
+    } else {
+      this.remStroge('img0')
+      this.remStroge('img1')
+      this.remStroge('img2')
+      this.remStroge('img3')
+      this.remStroge('img4')
+      this.remStroge('img5')
+      this.remStroge('img6')
+      this.remStroge('img7')
+      this.remStroge('img8')
+      this.remStroge('img9')
+    }
   },
 
   /**
@@ -300,7 +356,7 @@ Page({
 
   },
   application() {
-    wx.navigateTo({
+    wx.reLaunch({
       url: './edit/edit',
     })
   },

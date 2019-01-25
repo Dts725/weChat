@@ -97,7 +97,9 @@ Page({
   },
   //注册
   register() {
-    if (url.rules(this.data.registerInfo.mobile)) return
+    if (url.rules(this.data.registerInfo)) return
+    if (url.rulesIdCard(this.data.registerInfo.idCard)) return
+    if (url.rulesPhone(this.data.registerInfo.mobile)) return
 
     wx.showLoading({
       title: '注册中',

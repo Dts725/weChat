@@ -11,11 +11,11 @@ Component({
 
   lifetimes : {
     ready () {
-      console.log(this.data.progressData)
-     let num = this._init(this.data.progressData.ywsx_state)
       this.setData({
-        process : num
+        progressData: this.data.progressData.reverse()
       })
+
+  
     }
   },
 
@@ -30,31 +30,6 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
-    _init(n) {
-      let data = 0
-      switch (n) {
-        case n >= 14:
-          data = 0
-          break;
-        case n >= 23:
-          data = 1
-          break;
-        case n >= 31:
-          data = 2
-          break;
-        case n >= 35:
-          data = 3
-          break;
-        case 45:
-          data = 4
-          break;
-        default:
-
-      }
-
-      return data
-    },
 
   }
 })

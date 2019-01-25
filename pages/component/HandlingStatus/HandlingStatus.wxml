@@ -5,6 +5,6 @@
     <text> <text class='co-ce'>办件编号 : </text>
     <text class='co-44'>{{bjTopData.bj_bh}}</text></text>
     <text> <text class='co-ce'>办件状态 : </text>
-    <text class='co-44'>{{bjTopData.bj_ndoe_name}}</text></text>
+    <text class='co-44'>{{bjTopData.ywsx_state}}</text></text>
   </view>
 </view>

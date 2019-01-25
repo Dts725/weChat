@@ -1,4 +1,4 @@
-<view class='fz14 body'>
+<view class='fz14 body {{disabled}}'>
   <view class='tips w100'style='background-color:#ffefed;color:#e15244;'>请正确填写一下表单信息</view>
 
   <view class='label white'>
@@ -25,7 +25,7 @@
 
     <view class="flex-center-start ipt">
       <text class='item'>施工单位</text>
-      <input cursor-spacing='40'  bindtap='base_sgdw' style='margin-left:3em;' value='{{data["base.base_sgdw"]}}' placeholder-style="color:#dedede" type='text' placeholder='与施工保证书一致'></input>
+      <input cursor-spacing='40'  bindinput='base_sgdw' style='margin-left:3em;' value='{{data["base.base_sgdw"]}}' placeholder-style="color:#dedede" type='text' placeholder='与施工保证书一致'></input>
     </view>
 
     <view class="flex-center-start ipt">
@@ -213,7 +213,7 @@
     </view>
   </view>
 
-   <view class='flex-center-warp bottom fz14 white'>
+   <view wx:if="{{!disabled}}" class='flex-center-warp bottom fz14 white'>
       <view class='back co-ff' bindtap='back'>返回</view>
       <view class='next co-ff' bindtap='submitEdit'>保存</view>
     </view>

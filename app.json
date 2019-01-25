@@ -23,7 +23,8 @@
     "pages/bid/signature/signature",
     "pages/component/HandlingStatus/HandlingStatus",
     "pages/progress/progressItemInfo/progressItemInfo",
-    "pages/component/HandInfo/HandInfo"
+    "pages/component/HandInfo/HandInfo",
+    "pages/edit/uploadEdit"
   ],
   "window": {
     "backgroundTextStyle": "light",

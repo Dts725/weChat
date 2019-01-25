@@ -31,6 +31,6 @@
   
    <view class='flex-center-warp bottom fz14 white'>
       <view class='back co-ff' bindtap='back'>返回</view>
-      <view class='next co-ff' bindtap='submint'>保存</view>
+      <view class='next co-ff' bindtap='submint'>提交</view>
     </view>
 </view>
