@@ -85,11 +85,21 @@ Page({
       },
       method: 'GET',
       success: res => {
-        console.log(res.data.res_data)
-        wx.navigateTo({
-          url: `../../bid/edit/edit?data=${JSON.stringify(res.data.res_data)}&view=true`,
+        if(res.data.res_data.state === 1) {
+          wx.navigateTo({
+            url: `../../bid/edit/edit?data=${JSON.stringify(res.data.res_data)}&view=true`,
 
-        })
+          })
+        } else {
+        
+          wx.showToast({
+            title: '登录失败,请重新登录 ! ! !',
+          })
+          wx.navigateTo({
+            url: '../../login',
+          })
+        }
+
       }
     })
   },
@@ -104,10 +114,21 @@ Page({
       },
       method: 'GET',
       success: res => {
-        wx.navigateTo({
-          url: `../../bid/edit/edit?data=${JSON.stringify(res.data.res_data)}& view= false`,
+        if(res.data.res_data.state === 1) {
+          wx.navigateTo({
+            url: `../../bid/edit/edit?data=${JSON.stringify(res.data.res_data)}& view= false`,
 
-        })
+          })
+        } else {
+
+          wx.showToast({
+            title: '登录失败,请重新登录 ! ! !',
+          })
+          wx.navigateTo({
+            url: '../../login',
+          })
+        }
+ 
       }
     })
   },
@@ -123,7 +144,6 @@ Page({
       },
       method: 'GET',
       success: res => {
-        console.log(res)
         if (!res.data.res_data.list.length) {
 
 
@@ -133,9 +153,13 @@ Page({
           })
           return
         }
+
+        let list = res.data.res_data.list.map(el => {
+          return url.retutnUrl + `?id=${el.id}`
+        })
         wx.previewImage({
-          current: url.retutnUrl + `?id=${res.data.res_data.list[0].id}`, // 当前显示图片的http链接
-          urls: [url.retutnUrl + `?id=${res.data.res_data.list[0].id}`] // 需要预览的图片http链接列表
+          current: list[0], // 当前显示图片的http链接
+          urls: list // 需要预览的图片http链接列表
         })
 
 
@@ -143,16 +167,16 @@ Page({
     })
   },
 
+//删除附件
+delete (e) {
+  this.getBjInfoEdit(e.currentTarget.dataset.id,'delete')
 
-
+},
 
 
   // 编辑附件
-  getBjInfoEdit(id) {
-    //  删除附件
-    // url.deleteField(id)
-
-    console.log('怎么可以不哈奥的啊大大哈沙德')
+  getBjInfoEdit(id,lisId) {
+  
     //上传附件
     wx.request({
       url: url.getBjInfoFiled,
@@ -163,10 +187,30 @@ Page({
       method: 'GET',
       success: res => {
 
-        if (res.data.res_data.list.length) {
-          url.deleteField(res.data.res_data.list[0].id)
-          console.log(res.data.res_data.list[0].id)
+
+
+        if (lisId === 'delete') {
+          if (res.data.res_data.list.length) {
+            res.data.res_data.list.map(el => {
+              url.deleteField(el.id)
+
+            })
+            wx.showToast({
+              title: '附件删除成功 ! ! !',
+            })
+          } else {
+            wx.showToast({
+              title: '您未上传附件 ! ! !',
+              icon : 'none'
+            })
+          }
+
+  
+        return
+
         }
+
+
 
         wx.chooseImage({
           success(res) {

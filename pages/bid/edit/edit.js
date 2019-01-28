@@ -189,8 +189,8 @@
             wx.hideLoading()
             if (res.data.res_data.state == 1) {
               wx.setStorageSync('edit', this.data.data)
-              wx.navigateTo({
-                url: '../bid',
+              wx.navigateBack({
+                
               })
             } else {
               if (res.data.res_data.state == 0) {
@@ -254,8 +254,8 @@
     },
 
     back () {
-      wx.reLaunch({
-        url: '../bid?edit=1',
+      wx.navigateBack({
+        url: '../bid',
       })
     },
 
@@ -469,7 +469,7 @@
         if(!getStrog) return
         this.setData({
           disabled: '',
-          imgUrl: wx.getStorageSync('editImg'),
+          // imgUrl: wx.getStorageSync('editImg'),
           data: getStrog,
           czjgmc: getStrog.czjgmc, //材质结构名称
           ssxsmc: getStrog.ssxsmc, //设施形式名称1为牌匾；2为广告牌；3为霓虹灯；4为灯箱；5为标识牌；6为实物造型；7为公告栏；8为宣传栏；9为其他；
@@ -713,7 +713,9 @@
     /**
      * 生命周期函数--监听页面卸载
      */
-    onUnload: function() {},
+    onUnload: function() {
+      wx.setStorageSync('router_edit', '1')
+    },
 
     /**
      * 页面相关事件处理函数--监听用户下拉动作

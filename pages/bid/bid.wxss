@@ -19,25 +19,18 @@
     width: 70%;
     border-radius: 20rem;
   }
-  .back{
-  width: 35%;
-  background-color: #cecece;
-  line-height: 2rem;
-  text-align: center;
-  border-radius: 10rem;
+.module {
+  height: 6rem;
+    width: 100%;
+    border: 1px dashed #ccc;
+    border-radius: 5px;
+  background-color  :rgba(204,204,204,0.8);
+  /* opacity: 0.6; */
 
 }
 
-.next{
-  width: 35%;
-  background-color: #dd4734;
-
-  line-height: 2rem;
-  text-align: center;
-  border-radius: 10rem;
-
-}
-.bottom {
-  padding: 2em 0;
-  margin-top: 0.5em;
+.img {
+  height: 35px;
+  width: 35px;
+  padding: 0 0.5rem;
 }

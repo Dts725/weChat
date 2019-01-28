@@ -28,10 +28,8 @@ Page({
   //截取图片地址
   getImgUrl(str, fid, name,value) {
     let index = str.indexOf('webapps');
-    console.log(str.substr(index + 7))
+ 
     let imgUrl = url.imgUrl + str.substr(index + 7) + '/' + fid + name
-  
-    console.log(imgUrl)
     switch(value){
       case '0' : 
       {
@@ -160,13 +158,93 @@ Page({
     })
   },
 
+  //删除图片 
+   delete (e) {
+     let object_id = wx.getStorageSync('uploadInfo')[e.currentTarget.dataset.tap].id;
+     console.log(object_id)
+     url.deleteField(object_id)
+     wx.removeStorageSync(('img' + e.currentTarget.dataset.tap))
+
+     switch (e.currentTarget.dataset.tap){
+      case '0' :{
+        this.setData({
+          img0 : ""
+        })
+        break;
+      }
+      case '1' :{
+        this.setData({
+          img1 : ""
+        })
+        break;
+      }
+      case '2' :{
+        this.setData({
+          img2 : ""
+        })
+        break;
+      }
+      case '3' :{
+        this.setData({
+          img3 : ""
+        })
+        break;
+      }
+      case '4' :{
+        this.setData({
+          img4 : ""
+        })
+        break;
+      }
+      case '5' :{
+        this.setData({
+          img5 : ""
+        })
+        break;
+      }
+      case '6' :{
+        this.setData({
+          img6 : ""
+        })
+        break;
+      }
+      case '7' :{
+        this.setData({
+          img7 : ""
+        })
+        break;
+      }
+      case '8' :{
+        this.setData({
+          img8 : ""
+        })
+        break;
+      }
+      case '9' :{
+        this.setData({
+          img9 : ""
+        })
+        break;
+      }
+    }
+
+   },
+//预览图片
+  view (e) {
+    console.log(this.getStroge(('img' + e.currentTarget.dataset.tap)))
+    wx.previewImage({
+      current: this.getStroge(('img' + e.currentTarget.dataset.tap))[0], // 当前显示图片的http链接
+      urls: this.getStroge(('img' + e.currentTarget.dataset.tap)) // 需要预览的图片http链接列表
+    })
+  },
+
 
   //上传图片接口
   uploadFn1(e) {
     let user_id = wx.getStorageSync('userid').userid;
     let object_id = wx.getStorageSync('uploadInfo')[e.currentTarget.dataset.tap].id
     let str = `&user_id=${user_id}&object_id=${object_id}`
-    // console.log(str)
+ 
     let _this = this;
 
     wx.chooseImage({
@@ -193,16 +271,29 @@ Page({
   //数据本地存储
 
     steStroge(key,data) {
-        wx.setStorageSync(key, data)
+      let arr =[]
+      if (this.getStroge(key).length>0) {
+          //方便预览村存数组
+        let tmp = this.getStroge(key);
+          tmp.push(data)
+         
+           wx.setStorageSync(key, tmp)
+      }  else {
+        //首次存储
+       
+        wx.setStorageSync(key, [data])
+      }
+       
     },
     //获取本地数据
 
     getStroge(key) {
     return  wx.getStorageSync(key) 
     },
-    //移除strog 
+    //移除stroge
 
     remStroge(key) {
+
       wx.removeStorageSync(key)
     },
 
@@ -262,6 +353,8 @@ Page({
             wx.navigateTo({
               url: '../index/index',
             })
+            this.steStroge('router_edit', '0')
+
           } else {
             if (res.data.res_data.state === 0) {
               wx.showToast({
@@ -279,7 +372,7 @@ Page({
   },
 
   back () {
-    wx.reLaunch({
+    wx.navigateTo({
       url: './firstStemp/firstStemp',
     })
   },
@@ -314,7 +407,7 @@ Page({
     this.data.queryData.bjid = app.globalData.getMaterials.bjid;
     this.data.queryData.token = wx.getStorageSync('token');
       console.log(options)
-    if(options.edit === '1') {
+    if (this.getStroge('router_edit') === '1') {
       this.setData({
         img0: this.getStroge('img0'),
         img1: this.getStroge('img1'),
@@ -327,6 +420,7 @@ Page({
         img8: this.getStroge('img8'),
         img9: this.getStroge('img9')
       })
+     
     } else {
       this.remStroge('img0')
       this.remStroge('img1')
@@ -356,7 +450,7 @@ Page({
 
   },
   application() {
-    wx.reLaunch({
+    wx.navigateTo({
       url: './edit/edit',
     })
   },
@@ -372,7 +466,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function() {
-
+    wx.setStorageSync('router_edit', '0')
   },
 
   /**

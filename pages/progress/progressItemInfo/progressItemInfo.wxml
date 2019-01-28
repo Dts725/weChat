@@ -19,12 +19,13 @@
       <view class='flex-center-start'>
         <image class='img mr-1rem' src='../../image/time_icon.png'></image>
         <text class='co-ce'>提交时间:</text>{{item.cl_time}}</view>
-      <view class='flex-center-start'>
-        <image class='img mr-1rem' src='../../image/bind_item.png'></image>
-        <text class='co-ce'>操作:</text>
-        <text bindtap='edit' data-id='{{item.id}}' data-index='{{index}}' wx:if='{{dataInfo.bjinfo.ywsx_state_int === "13"}}'>编辑</text>
-        <text bindtap='view' data-id='{{item.id}}' data-index='{{index}}' wx:if='{{dataInfo.bjinfo.ywsx_state_int !== "13" }}'>查看</text>
-        <!-- <text bindtap='getBjInfo' data-id='{{item.id}}' wx:if='{{item.cl_state !== 3}}'>查看</text> -->
+      <view class='flex-center-between' style='width:25%;'>
+        
+        <image bindtap='edit' data-id='{{item.id}}' class='img-icon' src='../../image/edit_04.png' data-index='{{index}}' wx:if='{{dataInfo.bjinfo.ywsx_state_int === "13"}}'></image>
+        <image bindtap='delete' data-id='{{item.id}}' class='img-icon' src='../../image/delete.png' data-index='{{index}}' wx:if='{{dataInfo.bjinfo.ywsx_state_int === "13" && index !== 0}}'></image>
+        <image bindtap='view' data-id='{{item.id}}' class='img-icon' data-index='{{index}}' src='../../image/view.png' wx:if='{{dataInfo.bjinfo.ywsx_state_int === "13" && index !== 0}}'></image>
+        <image bindtap='view' data-id='{{item.id}}' class='img-icon' data-index='{{index}}' src='../../image/view.png' wx:if='{{dataInfo.bjinfo.ywsx_state_int !== "13" }}'></image>
+       
         </view>
     </view>
   </view>
