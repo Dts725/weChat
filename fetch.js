@@ -3,7 +3,7 @@ const imgUrl = 'https://xzfwzx.teda.gov.cn';
 
 import app from './app.js'
 
-function tokens() {
+function tokens() { 
 
   return wx.getStorageSync('token')
 }
@@ -115,7 +115,7 @@ const detailUrl = {
   getToken: tokens,
   viewBJBZInfoAndMaterials: url + `/api?method=tjkfqExchange.yhxcx.viewBJBZInfoAndMaterials`,
   getBjInfo: url + `/api?method=tjkfqExchange.yhxcx.loadTjkfq_047_01_01_base&token=${tokens()}`,//获取表单信息
-  getBjInfoFiled: url + `/api?method=tjkfqExchange.yhxcx.getAttachmentsByObjid&token=${tokens()}`, //获取附件信息
+  getBjInfoFiled: url + `/api?method=tjkfqExchange.yhxcx.getAttachmentsByObjid`, //获取附件信息
   retutnUrl: url + `/downloadFileHn.do`, //返回图片url
   uuidUrl: url + `/api?method=tjkfqExchange.yhxcx.getUUID`, //提交表单用uuid
   deleteField: deleteField,//删除附件接口

@@ -29,21 +29,21 @@ Page({
         })
       }
     })
-    wx.createSelectorQuery().select('#storesReserveID').boundingClientRect().exec(res => {
+    wx.createSelectorQuery().select('#storesReserveID').boundingClientRect(res => {
 
       that.setData({
-        scrollHeight: that.data.windowHeight - res[0].top
+        scrollHeight: that.data.windowHeight - res.top
       })
       console.log(that.data.scrollHeight)
 
-    })
+    }).exec()
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+  
   },
 
   /**

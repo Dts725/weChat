@@ -53,7 +53,7 @@
 
     <view class="flex-center-start ipt pr">
       <text class='item'>产权类型</text>
-      <input cursor-spacing='40' style='margin-left:3em;' placeholder-style="color:#dedede" type='text' value="{{propertyValue}}" placeholder='zhang'></input>
+      <input cursor-spacing='40' style='margin-left:3em;' placeholder-style="color:#dedede" type='text' value="{{propertyValue}}" placeholder='请输入产权类型'></input>
       <picker
        bindchange="base_cqlx" 
        class='pf picker-warp' value="{{index}}"
@@ -199,7 +199,7 @@
 
     <view class="flex-center-start ipt pr">
       <text class='item'>光源形式</text>
-      <input cursor-spacing='40' bindinput='ssxs' value='{{gyxsmc}}'  style='margin-left:3em;' placeholder-style="color:#dedede" type='text' placeholder='材料结构'></input>
+      <input cursor-spacing='40' bindinput='ssxs' value='{{gyxsmc}}'  style='margin-left:3em;' placeholder-style="color:#dedede" type='text' placeholder='光源形式'></input>
             <picker bindchange="gyxs" class='pf czjg'  value="{{index}}" range-key='name' range="{{gyxsArray}}">
           <view class="picker">{{item.name}}</view>
        </picker>

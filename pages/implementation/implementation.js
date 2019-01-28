@@ -19,8 +19,6 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
-
     let that = this
 
 
@@ -31,19 +29,21 @@ Page({
         })
       }
     })
-    wx.createSelectorQuery().select('#implementationID').boundingClientRect().exec(res => {
+    wx.createSelectorQuery().select('#implementationID').boundingClientRect(res => {
       console.log(res)
       that.setData({
-        clientHeight: that.data.windowHeight - res[0].top
+        clientHeight: that.data.windowHeight - res.top
       })
-    })
+    }).exec()
+
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    
   },
 
   /**

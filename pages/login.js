@@ -30,11 +30,8 @@ Page({
         client_secret: '880055513D7EF8FAF30E7DA7B03B9582' //小程序唯一访问密钥
       },
       success: res => {
-        wx.setStorage({
-          key: "token",
-          data: res.data.res_data.token
-        })
-        url.getToken();
+        wx.setStorage('token', res.data.res_data.token)
+        // url.getToken();
 
       }
     })

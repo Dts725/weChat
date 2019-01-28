@@ -29,12 +29,12 @@ Page({
         })
       }
     })
-    wx.createSelectorQuery().select('#managementHealthID').boundingClientRect().exec(res => {
-     
+    wx.createSelectorQuery().select('#managementHealthID').boundingClientRect(res => {
+
       that.setData({
-        clientHeight: that.data.windowHeight - res[0].top
+        clientHeight: that.data.windowHeight - res.top
       })
-    })
+    }).exec()
   },
 
   /**

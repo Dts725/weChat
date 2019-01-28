@@ -10,11 +10,11 @@
     </view>
   </view>
 
-  <view class='flex-center-start-column'>
+  <!-- <view class='flex-center-start-column'>
     <text class='tips fz15 fw700'>
        <text class='co-f0'>*</text> 设置户外广告设施行政许可申请书
-    </text>
-    <view class='pr w100'>
+    </text> -->
+    <!-- <view class='pr w100'>
       <view bindtap='uploadFn1' data-tap='0' data-src='{{img0}}' class="flex-center-column w100 content body fz14 co-99">
         <text wx-if="{{!img0}}">拍照上传</text>
         <image wx-if="{{!img0}}" style='height : 24px; width : 24px;' src='../image/icon_add.png'></image>
@@ -28,7 +28,7 @@
       </view>
     </view>
 
-  </view>
+  </view> -->
 
   <view class='flex-center-start-column'>
     <text class='tips fz15 fw700'>

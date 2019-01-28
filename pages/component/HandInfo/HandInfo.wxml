@@ -35,7 +35,7 @@
       </view>
     </view>
 
-    <view class='fz14 flex-center'>
+    <!-- <view class='fz14 flex-center'>
       <view class='flex-center-between bord_ce  w90 padl-1rem padr-1rem'>
         <text class='padt-1rem padb-1rem'>施工单位</text>
         <text class='padt-1rem padb-1rem co-ce'>{{construction.base_sgdw}}</text>
@@ -47,7 +47,7 @@
         <text class='padt-1rem padb-1rem'>联系电话</text>
         <text class='padt-1rem padb-1rem co-ce'>{{construction.base_sgdwlxdh}}</text>
       </view>
-    </view>
+    </view> -->
   </view>
   <progress wx-if="{{!flag}}" progressData='{{bjInfoProgress}}'></progress>
 

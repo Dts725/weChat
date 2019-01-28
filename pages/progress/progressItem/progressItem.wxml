@@ -7,7 +7,7 @@
     <view class='flex-center-start-column-center w100'>
       <view class='flex-center-start padd-darsh'>
         <image style='height:16px;width:16px;' src='../../image/progress/progressicon01.png'></image>
-        <text class='co-66 ml-1rem' decode='true' space='true'	>办理编号&nbsp;&nbsp;:</text>
+        <text class='co-66 ml-1rem' decode='true' space='true'>办理编号&nbsp;&nbsp;:</text>
         <text class='co-33 ml-1rem'>{{item.bj_bh}}</text>
       </view>
       <view class='flex-center-between padd-darsh'>

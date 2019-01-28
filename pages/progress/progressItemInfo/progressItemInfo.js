@@ -81,23 +81,35 @@ Page({
       url: url.getBjInfo,
       // url: url.getBjInfo,
       data: {
-        clid: id
+        clid: id,
+        token : wx.getStorageSync('token')
       },
       method: 'GET',
       success: res => {
+
         if(res.data.res_data.state === 1) {
           wx.navigateTo({
             url: `../../bid/edit/edit?data=${JSON.stringify(res.data.res_data)}&view=true`,
 
           })
         } else {
-        
-          wx.showToast({
-            title: '登录失败,请重新登录 ! ! !',
-          })
-          wx.navigateTo({
-            url: '../../login',
-          })
+          if (res.data.res_data.error) {
+            wx.showToast({
+              title: res.data.res_data.error,
+            })
+          } else {
+            // wx.showModal({
+            //   content: JSON.stringify(url.getBjInfo)+id+'测试'+wx.getStorageSync('token'),
+            // })
+          
+            wx.showToast({
+              title: '登录失败,请重新登录 ! ! !',
+            })
+            wx.navigateTo({
+              url: '../../login',
+            })
+          }
+
         }
 
       }
@@ -138,15 +150,23 @@ Page({
 
     wx.request({
       url: url.getBjInfoFiled,
-      // url: url.getBjInfo,
       data: {
-        clid: id
+        clid: id,
+        token : wx.getStorageSync('token')
       },
       method: 'GET',
       success: res => {
+
+        if(res.data.res_data.state === 0) {
+          wx.showToast({
+            title: '请重新登录! ! !',
+          })
+          wx.navigateTo({
+            url: '../../login',
+          })
+          return 
+        }
         if (!res.data.res_data.list.length) {
-
-
           wx.showToast({
             title: '您未上传附件 ! ! !',
             icon: 'none'

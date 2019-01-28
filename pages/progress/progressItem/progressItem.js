@@ -38,7 +38,7 @@ Page({
                 break;
               }
               case 13: {
-                res.data.res_data.list[index].ywsx_name = '预审补证';
+                res.data.res_data.list[index].ywsx_name = '预审补正';
                 break;
               }
               case 14: {

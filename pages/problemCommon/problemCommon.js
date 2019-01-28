@@ -21,8 +21,6 @@ Page({
    */
   onReady: function () {
     let that = this
-
-
     wx.getSystemInfo({
       success(res) {
         that.setData({
@@ -30,12 +28,12 @@ Page({
         })
       }
     })
-    wx.createSelectorQuery().select('#problemScroll').boundingClientRect().exec(res => {
+    wx.createSelectorQuery().select('#problemScroll').boundingClientRect(res => {
       console.log(res)
       that.setData({
-        clientHeight: that.data.windowHeight - res[0].top
+        clientHeight: that.data.windowHeight - res.top
       })
-    })
+    }).exec()
   },
 
   /**

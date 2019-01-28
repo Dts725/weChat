@@ -40,7 +40,7 @@
     <view class="flex-center-start ipt">
       <text class='co-f0'>*</text>
       <text class='item'>法人证件号码</text>
-      <input cursor-spacing='40' bindinput	='fr_zjnum' value='{{data.fr_zjnum}}' style='margin-left:3em;' placeholder-style="color:#dedede" type='text' placeholder='与施工保证书一致'></input>
+      <input cursor-spacing='40' bindinput	='fr_zjnum' value='{{data.fr_zjnum}}' style='margin-left:3em;' placeholder-style="color:#dedede" type='text' placeholder='请输入证件号码'></input>
     </view>
 
     <view class="flex-center-start ipt">

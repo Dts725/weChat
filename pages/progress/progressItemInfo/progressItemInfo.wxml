@@ -12,14 +12,14 @@
 <view wx:for='{{dataInfo.list}}' wx:if="{{viewFlag}}" wx:key='index'>
     <view class='mt-1rem white flex-center-between-column'>
     <view class='flex-center-start fw700 bord_ce w90 padl-1rem padr-1rem padt-1rem padb-1rem'>
-      <text class='lis-1 co-ff fz14 mr-1rem'>1</text>
+      <text class='lis-1 co-ff fz14 mr-1rem'>{{index+1}}</text>
       <text>{{item.cl_clmc}}</text>
       </view>
     <view class='flex-center-between w90 padl-1rem padr-1rem padt-1rem padb-1rem'>
       <view class='flex-center-start'>
         <image class='img mr-1rem' src='../../image/time_icon.png'></image>
         <text class='co-ce'>提交时间:</text>{{item.cl_time}}</view>
-      <view class='flex-center-between' style='width:25%;'>
+      <view class='flex-center-between' >
         
         <image bindtap='edit' data-id='{{item.id}}' class='img-icon' src='../../image/edit_04.png' data-index='{{index}}' wx:if='{{dataInfo.bjinfo.ywsx_state_int === "13"}}'></image>
         <image bindtap='delete' data-id='{{item.id}}' class='img-icon' src='../../image/delete.png' data-index='{{index}}' wx:if='{{dataInfo.bjinfo.ywsx_state_int === "13" && index !== 0}}'></image>

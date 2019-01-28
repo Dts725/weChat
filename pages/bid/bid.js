@@ -12,7 +12,7 @@ Page({
       bjid: ""
     },
     uploadFileInfo: '',
-    img0 : '',//图片和上个页面返回id 相关
+    // img0 : '',//图片和上个页面返回id 相关
     img1 : "",
     img2 : "",
     img3 : "",
@@ -323,6 +323,20 @@ Page({
 
   //提交申请材料
   submit () {
+
+    for(let i = 0;i<9;i++) {
+  
+        if(!this.data['img'+(i+1)]) {
+          wx.showToast({
+            title: '请检查上传文件 ! ! !',
+            icon : 'none'
+          })
+          return
+        }
+
+     
+    }
+
     let _this = this;
     wx.showLoading({
       title: '加载中',
