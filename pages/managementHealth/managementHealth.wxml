@@ -1,8 +1,8 @@
 <!--pages/managementHealth/managementHealth.wxml-->
 <view class='fz14'>
-  <image class='w100' mode='widthFix' src='../image/secondBanner/banner06.jpg'></image>
+  <image class='w100 pfx' style='height:10%;' mode='widthFix' src='../image/secondBanner/banner06.jpg'></image>
 
-  <scroll-view scroll-y id='managementHealthID' style='height : {{clientHeight?clientHeight + "px" : "px"}};'>
+  <scroll-view scroll-y id='managementHealthID' style='margin-top:16%;'>
     <view class='block'>
       <text class='fw700 tips'>第一条</text>
       <text class='cont'>为加强市容和环境卫生管理，创造和维护整洁、优美的市容环境，保障人民身体健康，促进经济发展和社会文明进步，根据有关法律、法规，结合本市实际情况，制定本条例。 </text>

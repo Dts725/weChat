@@ -324,14 +324,18 @@ Page({
   //提交申请材料
   submit () {
 
-    for(let i = 0;i<9;i++) {
-  
+    for(let i = 0;i<6;i++) {
+      console.log('img' + (i + 1))
         if(!this.data['img'+(i+1)]) {
-          wx.showToast({
-            title: '请检查上传文件 ! ! !',
-            icon : 'none'
-          })
-          return
+          if(i ===1) {
+            continue
+          } else {
+            wx.showToast({
+              title: '请检查上传文件 ! ! !',
+              icon: 'none'
+            })
+            return
+          }
         }
 
      
@@ -481,6 +485,16 @@ Page({
    */
   onUnload: function() {
     wx.setStorageSync('router_edit', '0')
+    this.remStroge('img0')
+    this.remStroge('img1')
+    this.remStroge('img2')
+    this.remStroge('img3')
+    this.remStroge('img4')
+    this.remStroge('img5')
+    this.remStroge('img6')
+    this.remStroge('img7')
+    this.remStroge('img8')
+    this.remStroge('img9')
   },
 
   /**

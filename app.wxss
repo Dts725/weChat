@@ -310,6 +310,12 @@ view {
   top: 0;
   left: 0;
 }
+.pfx {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
 
 .lin-3rem {
   line-height: 1.5rem;

@@ -94,9 +94,10 @@ Page({
           })
         } else {
           if (res.data.res_data.error) {
-            wx.showToast({
-              title: res.data.res_data.error,
-            })
+        wx.showModal({
+          title: '警告 ! ! !',
+          content: '',
+        })
           } else {
             // wx.showModal({
             //   content: JSON.stringify(url.getBjInfo)+id+'测试'+wx.getStorageSync('token'),
@@ -122,7 +123,8 @@ Page({
       url: url.getBjInfo,
       // url: url.getBjInfo,
       data: {
-        clid: id
+        clid: id,
+        token: wx.getStorageSync('token')
       },
       method: 'GET',
       success: res => {
@@ -132,13 +134,35 @@ Page({
 
           })
         } else {
+          if(res.data.res_data.error) {
+              wx.showModal({
+                title: '警告 ! ! !',
+                content: '本次申请未提交户外广告申请书,此次申请无效,请重新申请 ! ! !',
+                success : res => {
 
-          wx.showToast({
-            title: '登录失败,请重新登录 ! ! !',
-          })
-          wx.navigateTo({
-            url: '../../login',
-          })
+                  if (res.confirm) {
+                    wx.navigateTo({
+                      url: '../../bid/firstStemp/firstStemp',
+                    })
+                  } else if (res.cancel) {
+                      wx.showToast({
+                        title: '请重新申请 ! ! !',
+                        icon : 'none'
+                      })
+                  }
+       
+                },
+             
+              })
+          } else {
+            wx.showToast({
+              title: '登录失败,请重新登录 ! ! !',
+            })
+            wx.navigateTo({
+              url: '../../login',
+            })
+          }
+
         }
  
       }

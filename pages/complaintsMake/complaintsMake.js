@@ -32,8 +32,8 @@ Page({
   //返回
 
   back () {
-    wx.navigateTo({
-      url: '../index/index',
+    wx.navigateBack({
+      
     })
   },
 
@@ -43,7 +43,14 @@ Page({
     this.data.data['ts.ts_id'] = this.data.ts_id
     this.data.data.userid = wx.getStorageSync('userid').userid
     console.log(this.data.data)
-    if (url.rules(this.data.data)) return
+    if (!this.data.data['ts.ts_name'] || !this.data.data['ts.ts_wtms']) {
+      wx.showToast({
+        title: '请检查输入 ! ! !',
+        icon : 'none'
+      })
+
+      return
+    }
     wx.request({
       url: url.subPjTs,
       method: 'post',
@@ -58,7 +65,7 @@ Page({
            icon: 'success',
            duration: 2000
          })
-         wx.navigateTo({
+         wx.reLaunch({
            url: '../index/index',
          })
        } else {

@@ -1,11 +1,9 @@
 <!--pages/storesReserve/storesReserve.wxml-->
-<view>
-  <view>
-    <image class='w100' src='../image/secondBanner/banner01.jpg' mode="widthFix"></image>
+<view class='fz14'>
 
+    <image class='w100 pfx' style='height:10%;' src='../image/secondBanner/banner01.jpg' mode="widthFix"></image>
 
-  </view>
-  <scroll-view id='storesReserveID' scroll-y style="height: {{scrollHeight?scrollHeight+'px': 'aotuo'}}">
+  <scroll-view id='storesReserveID' scroll-y style='margin-top:20%;'>
 
     <view class='fz16 ml-1rem'>申请户外广告设施审批需要准备的材料：</view>
     <view class='content'>

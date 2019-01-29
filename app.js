@@ -1,7 +1,7 @@
 //app.js 
 import url from './fetch.js'
 // 注释console.log()
-// console.log=function(){}
+console.log=function(){}
 
 App({
   onLaunch: function () {

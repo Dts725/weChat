@@ -168,7 +168,7 @@
   <view class='label white'>
     <view class='flex-center-between'>
     <text class="fw700">广告</text>
-    <text class="fw700 co-skyblue">+新增</text>
+    <text class="fw700 co-skyblue"></text>
     </view>
     <view class="flex-center-start ipt">
       <text class="item">设置地点</text>

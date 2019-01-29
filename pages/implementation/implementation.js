@@ -19,23 +19,25 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    let that = this
+    // let that = this
 
+    // setTimeout(res => {
 
-    wx.getSystemInfo({
-      success(res) {
-        that.setData({
-          windowHeight: res.windowHeight
-        })
-      }
-    })
-    wx.createSelectorQuery().select('#implementationID').boundingClientRect(res => {
-      console.log(res)
-      that.setData({
-        clientHeight: that.data.windowHeight - res.top
-      })
-    }).exec()
+    //   wx.getSystemInfo({
+    //     success(res) {
+    //       that.setData({
+    //         windowHeight: res.windowHeight
+    //       })
+    //     }
+    //   })
+    //   wx.createSelectorQuery().select('#implementationID').boundingClientRect(res => {
+    //     console.log(res)
+    //     that.setData({
+    //       clientHeight: that.data.windowHeight - res.top
+    //     })
+    //   }).exec()
 
+    // },10)
 
   },
 

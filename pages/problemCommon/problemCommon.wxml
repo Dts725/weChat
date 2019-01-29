@@ -1,6 +1,6 @@
 <view class='body'>
-  <image class='w100' src='../image/secondBanner/banner02.jpg' mode='widthFix' style=' display: block;'></image>
-  <scroll-view scroll-y style='height : {{clientHeight? clientHeight + "px": "auto" }}' id='problemScroll'>
+  <image class='w100 pfx' style='height:10%;'  src='../image/secondBanner/banner02.jpg' mode='widthFix'></image>
+  <scroll-view scroll-y style='margin-top:16%;'  id='problemScroll'>
   <view class='lists fz14 white'>
     <view class='flex-center-start fz15 lisQ fw700'>
       <view class='quests flex-center'>Q</view>

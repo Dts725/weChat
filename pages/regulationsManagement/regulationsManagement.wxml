@@ -1,7 +1,7 @@
 <view class='fz14'>
-  <image class='w100'  mode='widthFix' src='../image/secondBanner/banner04.jpg'></image>
+  <image class='w100 pfx' style='height:10%;'  mode='widthFix' src='../image/secondBanner/banner04.jpg'></image>
 
-  <scroll-view scroll-y id='regulationsManagement' style='height : {{scrollHeight?scrollHeight + "px" : "px"}};'>
+  <scroll-view scroll-y id='regulationsManagement' style='margin-top:16%;'>
     <view class='block'>
       <text class='fw700 tips'>第一条</text>
       <text class='cont'>为加强本市户外广告设置管理， 规范户外广告使用和经营行为，美化市容环境，促进经济与社会协调发展，根据有关法律、法规，结合本市实际情况，制定本规定。 </text>

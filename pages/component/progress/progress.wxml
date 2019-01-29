@@ -8,7 +8,7 @@
       <view class='flex-center-column'>
         <image class='img' src='../../image/progress/icon01.png'></image>
         <!-- <view  class='line'></view> -->
-        <view wx:if='{{index !== 6}}' class='line'></view>
+        <view wx:if='{{item.hj_bj_hjname !== "结束"}}' class='line'></view>
       </view>
       <view class='flex-center-start-column'>
         <text class='fw700 item'>环节 : {{item.hj_bj_hjname}}</text>

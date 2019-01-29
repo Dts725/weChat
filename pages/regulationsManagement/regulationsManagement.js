@@ -21,24 +21,25 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    let that = this
+    // let that = this
 
+    // setTimeout(res => {
+    //   wx.getSystemInfo({
+    //     success(res) {
+    //       that.setData({
+    //         windowHeight: res.windowHeight
+    //       })
+    //     }
+    //   })
+    //   wx.createSelectorQuery().select('#regulationsManagement').boundingClientRect().exec(res => {
 
-    wx.getSystemInfo({
-      success(res) {
-        that.setData({
-          windowHeight: res.windowHeight
-        })
-      }
-    })
-    wx.createSelectorQuery().select('#regulationsManagement').boundingClientRect().exec(res => {
+    //     that.setData({
+    //       scrollHeight: that.data.windowHeight - res[0].top
+    //     })
+    //     console.log(that.data.scrollHeight)
 
-      that.setData({
-        scrollHeight: that.data.windowHeight - res[0].top
-      })
-      console.log(that.data.scrollHeight)
-
-    })
+    //   })
+    // },10)
   },
 
   /**

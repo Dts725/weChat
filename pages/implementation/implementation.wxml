@@ -1,7 +1,7 @@
 <view class='fz14'>
-  <image class='w100'  mode='widthFix' src='../image/secondBanner/banner05.jpg'></image>
+  <image class='w100 pfx' style='height:10%;'  mode='widthFix' src='../image/secondBanner/banner05.jpg'></image>
 
-  <scroll-view scroll-y id='implementationID' style='height : {{clientHeight?clientHeight + "px" : "px"}};'>
+  <scroll-view scroll-y id='implementationID' style='margin-top:16%;' >
     <view class='block'>
       <text class='fw700 tips'>第一条</text>
       <text class='cont'> 为保障市容环境秩序，规范设置户外广告设施行政许可行为，依据《中华人民共和国行政许可法》、《天津市市容和环境卫生管理条例》、《天津市设定和实施行政许可若干规定》的规定，制定本办法。 </text>
