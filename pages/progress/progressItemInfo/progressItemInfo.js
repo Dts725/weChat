@@ -94,10 +94,25 @@ Page({
           })
         } else {
           if (res.data.res_data.error) {
-        wx.showModal({
-          title: '警告 ! ! !',
-          content: '',
-        })
+            wx.showModal({
+              title: '警告 ! ! !',
+              content: '未检测到您提交户外广告申请书,此次申请无效,请重新申请 ! ! !',
+              success: res => {
+
+                if (res.confirm) {
+                  wx.navigateTo({
+                    url: '../../bid/firstStemp/firstStemp',
+                  })
+                } else if (res.cancel) {
+                  wx.showToast({
+                    title: '请重新申请 ! ! !',
+                    icon: 'none'
+                  })
+                }
+
+              },
+
+            })
           } else {
             // wx.showModal({
             //   content: JSON.stringify(url.getBjInfo)+id+'测试'+wx.getStorageSync('token'),
@@ -137,7 +152,7 @@ Page({
           if(res.data.res_data.error) {
               wx.showModal({
                 title: '警告 ! ! !',
-                content: '本次申请未提交户外广告申请书,此次申请无效,请重新申请 ! ! !',
+                content: '未检测到您提交户外广告申请书,此次申请无效,请重新申请 ! ! !',
                 success : res => {
 
                   if (res.confirm) {

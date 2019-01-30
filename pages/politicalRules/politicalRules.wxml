@@ -1,16 +1,16 @@
 <view class='fz16 mt-2rem'>
-  <navigator url='../regulationsManagement/regulationsManagement' class='flex-center'>
+  <navigator hover-class="none" url='../regulationsManagement/regulationsManagement' class='flex-center'>
     <!-- <view class=' co-ff'>天津市户外广告设置管理规定</view> -->
 
     <image class='img w90' src='../image/rules/v_01.png' mode='widthFix'></image>
 </navigator>
-  <navigator url='../implementation/implementation' class='flex-center'>
+  <navigator hover-class="none" url='../implementation/implementation' class='flex-center'>
     <!-- <view class='co-ff'>天津市设置户外广告设施行政许可实施办法
     </view> -->
     <image class='img w90' src='../image/rules/v_02.png' mode='widthFix'></image>
 
   </navigator>
-  <navigator url='../managementHealth/managementHealth' class='flex-center'>
+  <navigator hover-class="none" url='../managementHealth/managementHealth' class='flex-center'>
     <!-- <view class='co-ff'>天津市市容和环境卫生管理条例</view> -->
     <image class='img w90' src='../image/rules/v_03.png' mode='widthFix'></image>
   </navigator>
