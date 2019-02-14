@@ -250,9 +250,10 @@ Page({
     wx.chooseImage({
       success(res) {
         const tempFilePaths = res.tempFilePaths
+        console.log(tempFilePaths)
         wx.uploadFile({
           url: url.fileuploadSqcl + str,
-          filePath: tempFilePaths[0],
+          filePath: tempFilePaths,
           name: 'file',
 
           success(res) {

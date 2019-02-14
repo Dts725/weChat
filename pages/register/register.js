@@ -17,7 +17,8 @@ Page({
     },
     numberCode: '获取验证码',
     addClass: '',
-    phoneVerityCode : ''
+    phoneVerityCode : '',
+    codeFlag : false,
   },
   //获取验证码 
   getCodeFn() {
@@ -34,7 +35,10 @@ Page({
       url: url.getCode,
       data: data,
       success: res => {
-        this.data.phoneVerityCode =  res.data.res_data.phoneVerityCode
+        this.setData({
+          phoneVerityCode: res.data.res_data.phoneVerityCode
+        })
+    
         if (res.data.res_data.ok) {
       wx.showToast({
         title: res.data.res_data.ok,
@@ -93,6 +97,14 @@ Page({
         icon: 'none',
         duration: 2000
       })
+
+     this.setData({
+       codeFlag : true
+     })
+    } else {
+      this.setData({
+        codeFlag: false
+      })
     }
   },
   //注册
@@ -100,6 +112,14 @@ Page({
     if (url.rules(this.data.registerInfo)) return
     if (url.rulesIdCard(this.data.registerInfo.idCard)) return
     if (url.rulesPhone(this.data.registerInfo.mobile)) return
+    if (this.data.codeFlag) {
+      wx.showToast({
+        title: '验证码输入错误请重新输入',
+        icon: 'none',
+        duration: 2000
+      })
+      return
+    } 
 
     wx.showLoading({
       title: '注册中',
