@@ -189,9 +189,12 @@
             wx.hideLoading()
             if (res.data.res_data.state == 1) {
               wx.setStorageSync('edit', this.data.data)
+              wx.setStorageSync('szsqxks', '3')
+
               wx.navigateBack({
                 
               })
+
             } else {
               if (res.data.res_data.state == 0) {
            
@@ -236,6 +239,7 @@
 
             if (res.data.res_data.state == 1) {
               wx.setStorageSync('edit', this.data.data)
+              wx.setStorageSync('szsqxks', '3')
               wx.navigateBack({
                 
               })
@@ -302,22 +306,25 @@
       wx.chooseImage({
         success(res) {
           const tempFilePaths = res.tempFilePaths
-          wx.uploadFile({
-            url: url.fileuploadSqcl + data, // 仅为示例，非真实的接口地址
-            filePath: tempFilePaths[0],
-            name: 'file',
-            success :(res) => {
-              let obj = JSON.parse(res.data);
-              that.data.fid = obj.fid
-              wx.setStorageSync('editImg', that.getImgUrl(obj.savePath, obj.fid, obj.endName))
-              that.setData({
-                imgUrl: that.getImgUrl(obj.savePath, obj.fid, obj.endName)
-              })
+          tempFilePaths.forEach((el,index) => {
+            wx.uploadFile({
+              url: url.fileuploadSqcl + data, // 仅为示例，非真实的接口地址
+              filePath: tempFilePaths[index],
+              name: 'file',
+              success: (res) => {
+                let obj = JSON.parse(res.data);
+                that.data.fid = obj.fid
+                wx.setStorageSync('editImg', that.getImgUrl(obj.savePath, obj.fid, obj.endName))
+                that.setData({
+                  imgUrl: that.getImgUrl(obj.savePath, obj.fid, obj.endName)
+                })
 
-              app.globalData.fid[0] = that.data.fid
-              // do something
-            }
+                app.globalData.fid[0] = that.data.fid
+                // do something
+              }
+            })
           })
+
         }
       })
     },
@@ -461,7 +468,7 @@
      * 生命周期函数--监听页面加载
      */
     onLoad: function(options) {
-
+      wx.setStorageSync('szsqxks', '2')
       url.uuid(this, this.setUuid);
       if (JSON.stringify(options).length<3) {
         let getStrog = wx.getStorageSync('edit')

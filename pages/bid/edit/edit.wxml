@@ -208,7 +208,7 @@
 
     <view class="flex-center-start-column ipt">
       <text>光源形式</text>
-      <text class='co-de'>和营业执照注册内容一样,包含logo图标,中英文名称如果不一致需要提供相关证明文件,如合作协议,加盟协议等相关材料</text>
+      <text class='co-ce'>和营业执照注册内容一样,包含logo图标,中英文名称如果不一致需要提供相关证明文件,如合作协议,加盟协议等相关材料</text>
      
     </view>
   </view>

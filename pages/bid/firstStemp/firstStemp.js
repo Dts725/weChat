@@ -154,6 +154,11 @@ Page({
       value: this.data.idType[e.detail.value].name,
     })
   },
+
+  remStroge(key) {
+
+    wx.removeStorageSync(key)
+  },
   back() {
     wx.reLaunch({
         url : '../../index/index'
@@ -168,6 +173,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    wx.setStorageSync('szsqxks', '0')
+    this.remStroge('img0')
+    this.remStroge('img1')
+    this.remStroge('img2')
+    this.remStroge('img3')
+    this.remStroge('img4')
+    this.remStroge('img5')
+    this.remStroge('img6')
+    this.remStroge('img7')
+    this.remStroge('img8')
+    this.remStroge('img9')
     this.data.data.userid = wx.getStorageSync('userid').userid;
     // this.data.data.token = wx.getStorageSync('token');
     // console.log(this.data.data.token)
@@ -176,14 +192,20 @@ Page({
       key: 'firstStemp',
       success: function(res) {
         console.log(res.data)
-
+        _this.data.idType.forEach(el => {
+          if (res.data.fr_zjlx === el.value) {
+              _this.setData ({
+                value : el.name
+              })
+          }
+    })
         _this.setData({
           data: res.data
         })
         // _this.data.data =
       },
     })
-
+  
   
 
   },

@@ -228,7 +228,19 @@ Page({
 
 //删除附件
 delete (e) {
-  this.getBjInfoEdit(e.currentTarget.dataset.id,'delete')
+  
+ let _this = this
+  wx.showModal({
+    title: '提示',
+    content: '您正在删除附件 ! ! !',
+    success(res) {
+      if (res.confirm) {
+        _this.getBjInfoEdit(e.currentTarget.dataset.id, 'delete')
+      } else if (res.cancel) {
+        console.log('用户点击取消')
+      }
+    }
+  })
 
 },
 
@@ -241,12 +253,11 @@ delete (e) {
       url: url.getBjInfoFiled,
 
       data: {
-        clid: id
+        clid: id,
+        token: wx.getStorageSync('token')
       },
       method: 'GET',
       success: res => {
-
-
 
         if (lisId === 'delete') {
           if (res.data.res_data.list.length) {
@@ -274,15 +285,19 @@ delete (e) {
         wx.chooseImage({
           success(res) {
             const tempFilePaths = res.tempFilePaths
-            wx.uploadFile({
-              url: url.fileuploadSqcl + `&object_id=${id}`, // 仅为示例，非真实的接口地址
 
-              filePath: tempFilePaths[0],
-              name: 'file',
-              success: (res) => {
-                console.log(res)
-              }
+            tempFilePaths.forEach((el,index)=> {
+              wx.uploadFile({
+                url: url.fileuploadSqcl + `&object_id=${id}`, // 仅为示例，非真实的接口地址
+
+                filePath: tempFilePaths[index],
+                name: 'file',
+                success: (res) => {
+                  console.log(res)
+                }
+              })
             })
+
           }
         })
       }
@@ -291,12 +306,58 @@ delete (e) {
 
   // 提交按钮 
   submitEdit() {
+   
+    let flag=false;
     let data = {
       token: wx.getStorageSync('token'),
       userid: wx.getStorageSync('userid').userid,
       bjid: this.data.dataInfo.bjid,
       ywsx_id: this.data.dataInfo.bjinfo.ywsx_id,
     }
+
+    this.data.dataInfo.list.forEach((el,index) => {
+
+      if(index === 8 || index === 7 || index === 0){
+
+      } else {
+        wx.request({
+          url: url.getBjInfoFiled,
+          data: {
+            clid: el.id,
+            token: wx.getStorageSync('token')
+          },
+          method: 'GET',
+          success: res => {
+
+            if (res.data.res_data.state === 0) {
+              flag = true;
+              wx.showToast({
+                title: '请重新登录! ! !',
+              })
+              wx.navigateTo({
+                url: '../../login',
+              })
+              return
+            }
+            if (!res.data.res_data.list.length) {
+              flag = true;
+              wx.showToast({
+                title: '您未上传附件 ! ! !',
+                icon: 'none'
+              })
+              return
+            }
+
+          }
+        })
+      }
+     
+    })
+
+    if(flag) return
+    wx.showLoading({
+      title: '',
+    })
     wx.request({
       url: url.subBJBZInfo,
       method: 'POST',
@@ -312,6 +373,8 @@ delete (e) {
         }
       }
     })
+    wx.hideLoading()
+
   },
 
 

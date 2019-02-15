@@ -2,7 +2,7 @@
 
   <view class='flex-center-start-column'>
   <text class='fz15 fw700 lin'>投诉建议</text>
-  <text  class="co-de">您可以将事项办理中遇到的任何问题留言给我们我们会尽快为您解决,并将您的建议作为我们未来工作的改进方向</text>
+  <text>您可以将事项办理中遇到的任何问题留言给我们我们会尽快为您解决,并将您的建议作为我们未来工作的改进方向</text>
   </view>
 
   <view class='flex-center-start-column topic'>
@@ -12,7 +12,7 @@
 
   <view class='flex-center-start-column topic'>
   <text  class='fz15 fw700 lin'>投诉或建议内容</text>
-  <textarea maxlength='500' bindinput="concentFn"  class="w100 border-rad" placeholder-style='text-indent:1em;' placeholder-class='co-de' placeholder='请输入投诉主题'></textarea>
+  <textarea maxlength='500' bindinput="concentFn"  class="w100 border-rad" placeholder-style='text-indent:1em;' placeholder-class='co-de' placeholder='请输入投诉或建议内容'></textarea>
   </view>
 
 

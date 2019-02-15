@@ -229,6 +229,7 @@ Page({
     }
 
    },
+  
 //预览图片
   view (e) {
     console.log(this.getStroge(('img' + e.currentTarget.dataset.tap)))
@@ -250,20 +251,22 @@ Page({
     wx.chooseImage({
       success(res) {
         const tempFilePaths = res.tempFilePaths
-        console.log(tempFilePaths)
-        wx.uploadFile({
-          url: url.fileuploadSqcl + str,
-          filePath: tempFilePaths,
-          name: 'file',
+        tempFilePaths.forEach((el,index) => {
+          wx.uploadFile({
+            url: url.fileuploadSqcl + str,
+            filePath: tempFilePaths[index],
+            name: 'file',
 
-          success(res) {
-            let obj = JSON.parse(res.data);
-        
-            _this.getImgUrl(obj.savePath, obj.fid, obj.endName, e.currentTarget.dataset.tap);
-            app.globalData.fid[e.currentTarget.dataset.tap] = obj.fid;
+            success(res) {
+              let obj = JSON.parse(res.data);
 
-          }
+              _this.getImgUrl(obj.savePath, obj.fid, obj.endName, e.currentTarget.dataset.tap);
+              app.globalData.fid[e.currentTarget.dataset.tap] = obj.fid;
+
+            }
+          })
         })
+
       }
     })
 
@@ -341,7 +344,22 @@ Page({
 
      
     }
+    if (!this.data['img9']) {
+ 
+        wx.showToast({
+          title: '请检查上传文件 ! ! !',
+          icon: 'none'
+        })
+        return
+    }
 
+    if (wx.getStorageSync('szsqxks') !== '3') {
+      wx.showToast({
+        title: '请填写设置户外设施行政许可申请书 ! ! !',
+        icon: 'none'
+      })
+      return
+    }
     let _this = this;
     wx.showLoading({
       title: '加载中',
@@ -372,7 +390,7 @@ Page({
             wx.navigateTo({
               url: '../index/index',
             })
-            this.steStroge('router_edit', '0')
+            wx.setStorageSync('router_edit', '0')
 
           } else {
             if (res.data.res_data.state === 0) {
@@ -459,6 +477,13 @@ Page({
    */
   onReady: function() {
     this.getMaterials();
+
+    if (wx.getStorageSync('szsqxks') === '3') {
+
+    } else {
+      wx.setStorageSync('szsqxks', '0')
+
+    }
 
   },
 
