@@ -1,4 +1,11 @@
 //app.js 
+
+var fundebug = require('./fundebug.1.0.0.min.js');
+fundebug.init(
+  {
+    apikey: 'f25bde454fd7f711ef9de77a9567bd5f7d23cc2aeac8151dc7712b54a3be7407'
+  })
+// fundebug.notify("微信小程序bug测试", "Hello, bug!")
 import url from './fetch.js'
 // 注释console.log()
 // console.log=function(){}

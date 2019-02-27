@@ -9,6 +9,8 @@
   line-height: 1.5rem;
  
 }
+
+
  
 .lis-1 {
   line-height: 1rem;
@@ -175,6 +177,5 @@ padding: 0 0.2rem;
   padding: 2em 0;
   margin-top: 0.5em;
 }
- 
 
  

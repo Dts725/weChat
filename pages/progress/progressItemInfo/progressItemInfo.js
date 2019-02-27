@@ -8,7 +8,8 @@ Page({
   data: {
 
     bjTopData: {},
-    viewFlag: true
+    viewFlag: true,
+    _previewFlag : false 
   },
   routeProgressInfo(e) {
 
@@ -228,19 +229,38 @@ Page({
 
 //删除附件
 delete (e) {
+  let  _this = this;
   
- let _this = this
-  wx.showModal({
-    title: '提示',
-    content: '您正在删除附件 ! ! !',
-    success(res) {
-      if (res.confirm) {
-        _this.getBjInfoEdit(e.currentTarget.dataset.id, 'delete')
-      } else if (res.cancel) {
-        console.log('用户点击取消')
-      }
+  let id = e.currentTarget.dataset.id;
+  //上传附件
+  wx.request({
+    url: url.getBjInfoFiled,
+
+    data: {
+      clid: id,
+      token: wx.getStorageSync('token')
+    },
+    method: 'GET',
+    success: res => {
+
+      // let list = res.data.res_data.list.map(el => {
+      //   return url.retutnUrl + `?id=${el.id}`
+      // })
+    if(res.data.res_data.list.length) {
+
+      wx.setStorageSync('previewImageList', res.data.res_data.list)
+
+      wx.navigateTo({
+        url: '../deleteImage/deleteImage',
+      })
+    } else {
+        wx.showToast({
+          title: '您未上传附件 ! ! !',
+          icon : 'none'
+        })
     }
-  })
+
+    }})
 
 },
 
@@ -259,26 +279,26 @@ delete (e) {
       method: 'GET',
       success: res => {
 
-        if (lisId === 'delete') {
-          if (res.data.res_data.list.length) {
-            res.data.res_data.list.map(el => {
-              url.deleteField(el.id)
+        // if (lisId === 'delete') {
+        //   if (res.data.res_data.list.length) {
+        //     res.data.res_data.list.map(el => {
+        //       url.deleteField(el.id)
 
-            })
-            wx.showToast({
-              title: '附件删除成功 ! ! !',
-            })
-          } else {
-            wx.showToast({
-              title: '您未上传附件 ! ! !',
-              icon : 'none'
-            })
-          }
+        //     })
+        //     wx.showToast({
+        //       title: '附件删除成功 ! ! !',
+        //     })
+        //   } else {
+        //     wx.showToast({
+        //       title: '您未上传附件 ! ! !',
+        //       icon : 'none'
+        //     })
+        //   }
 
   
-        return
+        // return
 
-        }
+        // }
 
 
 
@@ -305,18 +325,49 @@ delete (e) {
   },
 
   // 提交按钮 
-  submitEdit() {
-   
-    let flag=false;
-    let data = {
-      token: wx.getStorageSync('token'),
-      userid: wx.getStorageSync('userid').userid,
-      bjid: this.data.dataInfo.bjid,
-      ywsx_id: this.data.dataInfo.bjinfo.ywsx_id,
-    }
+   submitEdit() {
 
-    this.data.dataInfo.list.forEach((el,index) => {
+let flag = false;
+  //    let tmpList = this.data.dataInfo.list;
+  // for(let index = 0;index< tmpList.length;index++) {
+  //   if (index === 8 || index === 7 || index === 0) {
 
+  //   } else {
+  //     wx.request({
+  //       url: url.getBjInfoFiled,
+  //       data: {
+  //         clid: tmpList[index].id,
+  //         token: wx.getStorageSync('token')
+  //       },
+  //       method: 'GET',
+  //       success: res => {
+
+  //         if (res.data.res_data.state === 0) {
+  //           flag = true;
+  //           wx.showToast({
+  //             title: '请重新登录! ! !',
+  //           })
+  //           wx.navigateTo({
+  //             url: '../../login',
+  //           })
+  //           return
+  //         }
+  //          console.count('测试')
+  //         if (!res.data.res_data.list.length) {
+  //           console.log('哈哈哈哈哈哈')
+  //           wx.showToast({
+  //             title: '您未上传附件 ! ! !',
+  //             icon: 'none'
+  //           })
+  //           flag = true;
+  //           return
+  //         }
+  //       }
+  //     })
+  //   }
+  // }
+   this.data.dataInfo.list.forEach((el,index) => {
+     console.log('测试')
       if(index === 8 || index === 7 || index === 0){
 
       } else {
@@ -339,22 +390,42 @@ delete (e) {
               })
               return
             }
+        
             if (!res.data.res_data.list.length) {
-              flag = true;
+              console.log('哈哈哈哈哈哈')
               wx.showToast({
                 title: '您未上传附件 ! ! !',
                 icon: 'none'
               })
+              flag = true;
               return
+            }  else {
+              if(index === 9) {
+                if (!flag) {
+                  console.log('2838238428342349')
+                  this.syncSubmit()
+                };
+               
+              }
             }
-
           }
         })
       }
-     
     })
 
-    if(flag) return
+   
+
+  },
+
+  // 同步跳转
+
+  syncSubmit() {
+    let data = {
+      token: wx.getStorageSync('token'),
+      userid: wx.getStorageSync('userid').userid,
+      bjid: this.data.dataInfo.bjid,
+      ywsx_id: this.data.dataInfo.bjinfo.ywsx_id,
+    }
     wx.showLoading({
       title: '',
     })
@@ -367,14 +438,13 @@ delete (e) {
       data: data,
       success: res => {
         if (res.data.res_data.state === 1) {
-          wx.navigateTo({
-            url: '../progressItem/progressItem',
-          })
+    wx.navigateTo({
+      url: '../progressItem/progressItem',
+    })
         }
       }
     })
     wx.hideLoading()
-
   },
 
 

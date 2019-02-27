@@ -6,7 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    dataInfo : ""
+    dataInfo : "",
+    volidFlag : false
   },
   routeProgressInfo (e) {
     console.log(e)
@@ -89,9 +90,15 @@ Page({
           })
 
      
+    
           this.setData({
             dataInfo: res.data.res_data.list
           })
+          if(!res.data.res_data.list.length) {
+            this.setData({
+              volidFlag : true,
+            })
+          }
         } else {
           wx.showToast({
             title: '您未登录或登录失效请重新登录',

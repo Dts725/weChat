@@ -3,6 +3,7 @@
     "pages/index/index",
     "pages/bid/firstStemp/firstStemp",
     "pages/bid/bid",
+    "pages/bid/deleteImageBid/deleteImageBid",
     "pages/bid/edit/edit",
     "pages/login",
     "pages/bid/promise/promise",
@@ -24,7 +25,8 @@
     "pages/component/HandlingStatus/HandlingStatus",
     "pages/progress/progressItemInfo/progressItemInfo",
     "pages/component/HandInfo/HandInfo",
-    "pages/edit/uploadEdit"
+    "pages/edit/uploadEdit",
+    "pages/progress/deleteImage/deleteImage"
   ],
   "window": {
     "backgroundTextStyle": "light",

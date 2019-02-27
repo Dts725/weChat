@@ -30,7 +30,8 @@
     </view>
   </view>
 </view>
- 
+
+
 
    <view  wx:if='{{dataInfo.bjinfo.ywsx_state_int === "13" && viewFlag}}' class='flex-center-warp bottom fz14 white'>
       <view class='back co-ff' bindtap='back'>返回</view>
@@ -38,3 +39,4 @@
     </view>
 
 </view>
+

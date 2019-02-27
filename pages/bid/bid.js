@@ -158,77 +158,118 @@ Page({
     })
   },
 
-  //删除图片 
-   delete (e) {
-     let object_id = wx.getStorageSync('uploadInfo')[e.currentTarget.dataset.tap].id;
-     console.log(object_id)
-     url.deleteField(object_id)
-     wx.removeStorageSync(('img' + e.currentTarget.dataset.tap))
+  // //删除图片 
+  //  delete (e) {
+  //    let object_id = wx.getStorageSync('uploadInfo')[e.currentTarget.dataset.tap].id;
+  //    console.log(object_id)
+  //    url.deleteField(object_id)
+  //    wx.removeStorageSync(('img' + e.currentTarget.dataset.tap))
 
-     switch (e.currentTarget.dataset.tap){
-      case '0' :{
-        this.setData({
-          img0 : ""
-        })
-        break;
-      }
-      case '1' :{
-        this.setData({
-          img1 : ""
-        })
-        break;
-      }
-      case '2' :{
-        this.setData({
-          img2 : ""
-        })
-        break;
-      }
-      case '3' :{
-        this.setData({
-          img3 : ""
-        })
-        break;
-      }
-      case '4' :{
-        this.setData({
-          img4 : ""
-        })
-        break;
-      }
-      case '5' :{
-        this.setData({
-          img5 : ""
-        })
-        break;
-      }
-      case '6' :{
-        this.setData({
-          img6 : ""
-        })
-        break;
-      }
-      case '7' :{
-        this.setData({
-          img7 : ""
-        })
-        break;
-      }
-      case '8' :{
-        this.setData({
-          img8 : ""
-        })
-        break;
-      }
-      case '9' :{
-        this.setData({
-          img9 : ""
-        })
-        break;
-      }
-    }
+  //    switch (e.currentTarget.dataset.tap){
+  //     case '0' :{
+  //       this.setData({
+  //         img0 : ""
+  //       })
+  //       break;
+  //     }
+  //     case '1' :{
+  //       this.setData({
+  //         img1 : ""
+  //       })
+  //       break;
+  //     }
+  //     case '2' :{
+  //       this.setData({
+  //         img2 : ""
+  //       })
+  //       break;
+  //     }
+  //     case '3' :{
+  //       this.setData({
+  //         img3 : ""
+  //       })
+  //       break;
+  //     }
+  //     case '4' :{
+  //       this.setData({
+  //         img4 : ""
+  //       })
+  //       break;
+  //     }
+  //     case '5' :{
+  //       this.setData({
+  //         img5 : ""
+  //       })
+  //       break;
+  //     }
+  //     case '6' :{
+  //       this.setData({
+  //         img6 : ""
+  //       })
+  //       break;
+  //     }
+  //     case '7' :{
+  //       this.setData({
+  //         img7 : ""
+  //       })
+  //       break;
+  //     }
+  //     case '8' :{
+  //       this.setData({
+  //         img8 : ""
+  //       })
+  //       break;
+  //     }
+  //     case '9' :{
+  //       this.setData({
+  //         img9 : ""
+  //       })
+  //       break;
+  //     }
+  //   }
 
-   },
+  //  },
+
+  //删除附件
+  delete(e) {
+    let _this = this;
+    let tap = e.currentTarget.dataset.tap;
+
+    let id = wx.getStorageSync('uploadInfo')[e.currentTarget.dataset.tap].id;;
+    //上传附件
+    wx.request({
+      url: url.getBjInfoFiled,
+
+      data: {
+        clid: id,
+        token: wx.getStorageSync('token')
+      },
+      method: 'GET',
+      success: res => {
+
+        // let list = res.data.res_data.list.map(el => {
+        //   return url.retutnUrl + `?id=${el.id}`
+        // })
+        if (res.data.res_data.list.length) {
+
+          wx.setStorageSync('previewImageList', res.data.res_data.list)
+
+          wx.navigateTo({
+            url: './deleteImageBid/deleteImageBid?img='+'img'+tap,
+          })
+        } else {
+          wx.showToast({
+            title: '您未上传附件 ! ! !',
+            icon: 'none'
+          })
+        }
+
+      }
+    })
+
+  },
+
+
   
 //预览图片
   view (e) {
@@ -443,7 +484,9 @@ Page({
     this.data.queryData.sxid = app.globalData.getMaterials.sxid;
     this.data.queryData.bjid = app.globalData.getMaterials.bjid;
     this.data.queryData.token = wx.getStorageSync('token');
-      console.log(options)
+     
+
+
     if (this.getStroge('router_edit') === '1') {
       this.setData({
         img0: this.getStroge('img0'),
@@ -491,6 +534,23 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
+    console.log(!this.getStroge('img1'))
+    if (this.getStroge('delete_back') === '1') {
+      this.setData({
+        img0: this.getStroge('img0').length ? this.getStroge('img0')[0] : '',
+        img1: this.getStroge('img1').length ? this.getStroge('img1')[0] : '',
+        img2: this.getStroge('img2').length ? this.getStroge('img2')[0] : '',
+        img3: this.getStroge('img3').length ? this.getStroge('img3')[0] : '',
+        img4: this.getStroge('img4').length ? this.getStroge('img4')[0] : '',
+        img5: this.getStroge('img5').length ? this.getStroge('img5')[0] : '',
+        img6: this.getStroge('img6').length ? this.getStroge('img6')[0] : '',
+        img7: this.getStroge('img8').length ? this.getStroge('img7')[0] : '',
+        img8: this.getStroge('img8').length ? this.getStroge('img8')[0] : '',
+        img9: this.getStroge('img9').length ? this.getStroge('img9')[0] : '',
+
+      })
+    }
+    this.getStroge('delete_back') === '0'
 
   },
   application() {

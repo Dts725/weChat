@@ -1,5 +1,5 @@
 <view class='fz14 body {{disabled}}'>
-  <view class='tips w100'style='background-color:#ffefed;color:#e15244;'>请正确填写一下表单信息</view>
+  <view class='tips w100'style='background-color:#ffefed;color:#e15244;'>请正确填写以下表单信息</view>
 
   <view class='label white'>
     <text class="fw700">基本信息</text>
